@@ -1,6 +1,4 @@
 - create blueprint files for config files of tailwind and postcss
 - learn about routing (App Router) -> Youtube video
-- create sections
-- create custom variables (tailwind config) for colors
-- figure out how new CSS-first approach without tailwind.config.js works
-- create navbar component
+- create custom variables for colors
+- restructure navbar items array -> how to enable navigation to sections by id?

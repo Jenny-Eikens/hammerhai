@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Freeman&display=swap');
-@import "tailwindcss";
-
+@import 'tailwindcss';
 
 @theme {
-  --color-section-gray: #B9B9B9;
+  --color-section-gray: #b9b9b9;
+  --color-navbar: #d9d9d9;
 }
 
 * {
@@ -19,7 +19,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Freeman";
+  font-family: 'Freeman';
   font-size: 16;
   font-weight: 400;
 }

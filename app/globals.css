@@ -4,6 +4,7 @@
 @theme {
   --color-section-gray: #b9b9b9;
   --color-navbar: #d9d9d9;
+  --color-underline: #1e61b9;
 }
 
 * {

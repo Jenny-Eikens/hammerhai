@@ -1,4 +1,3 @@
-- create blueprint files for config files of tailwind and postcss
 - learn about routing (App Router) -> Youtube video
 - create custom variables for colors
-- restructure navbar items array -> how to enable navigation to sections by id?
+- figure out how to stop border from shifting text upwards

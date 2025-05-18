@@ -5,6 +5,7 @@
   --color-section-gray: #b9b9b9;
   --color-navbar: #d9d9d9;
   --color-underline: #1e61b9;
+  --shadow-md: 0 0 6px 0 rgb(0 0 0 / 0.1);
   --shadow-xl: 0 0 15px 3px rgb(0 0 0 / 0.1);
 }
 

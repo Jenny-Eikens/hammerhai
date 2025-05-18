@@ -22,11 +22,11 @@ const Home = () => {
   return (
     <>
       <div className="m-auto w-full max-w-[1400px]">
-        <header className="fixed z-100 h-[4rem] w-full max-w-[1400px] border border-green-500 bg-transparent px-2 md:h-[10rem] md:px-0">
+        <header className="fixed z-100 h-max max-h-[200px] w-full max-w-[1400px] bg-transparent px-1 md:px-0 md:py-2">
           <Header />
         </header>
 
-        <main className="border border-red-500">
+        <main>
           {/* MAIN CONTENT */}
           <section
             id="home"
@@ -35,7 +35,7 @@ const Home = () => {
             <Sidebar />
             <a
               href="#live"
-              className="mx-auto mt-auto mb-4 flex h-[4rem] w-[4rem] items-center justify-center rounded-full bg-white shadow-xl transition-all ease-out hover:scale-[1.2] hover:cursor-pointer"
+              className="mx-auto mt-auto mb-4 hidden h-[4rem] w-[4rem] items-center justify-center rounded-full bg-white shadow-xl transition-all ease-out hover:scale-[1.2] hover:cursor-pointer md:flex"
             >
               <span className="text-underline scale-150">{downArrow}</span>
             </a>

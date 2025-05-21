@@ -49,7 +49,7 @@ const Header = () => {
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            className="relative top-0 z-50 scale-150 p-1 md:hidden" // z-index ensures button isn't hidden under overlay
+            className="bg-navbar sticky top-0 z-50 scale-150 p-1 md:hidden" // z-index ensures button isn't hidden under overlay
           >
             {menuOpen ? closeIcon : burgerIcon}
           </button>
@@ -77,17 +77,22 @@ const Header = () => {
         {/* Nav bar */}
         {/* slides in from left on small screens, fixed with no transition from medium-sized screens */}
         <nav
-          className={`bg-navbar fixed top-0 left-0 z-40 flex h-full w-[75%] max-w-[300px] flex-col transition-transform duration-300 ${menuOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:top-auto md:left-auto md:h-[70%] md:w-auto md:max-w-full md:translate-x-0 md:flex-row md:justify-end md:px-4`}
+          className={`bg-navbar fixed top-0 left-0 z-40 flex h-full w-[75%] max-w-[300px] flex-col overflow-y-auto pb-2 transition-transform duration-300 md:pb-0 ${menuOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:top-auto md:left-auto md:h-[70%] md:w-auto md:max-w-full md:translate-x-0 md:flex-row md:justify-end md:px-4`}
         >
           {/* column layout on small screens, row from medium-size */}
-          <ul className="mt-[8rem] list-none space-y-6 px-4 md:mt-0 md:flex md:flex-row md:flex-wrap md:items-center md:space-y-0 md:space-x-6 md:gap-y-2 md:px-0 md:py-4">
+          <ul className="mt-[8rem] list-none space-y-10 px-4 md:mt-0 md:flex md:flex-row md:flex-wrap md:items-center md:space-y-0 md:space-x-6 md:gap-y-2 md:px-0 md:py-4">
             {navItems.map((item, index) => (
               <li
                 key={index}
-                className={`overflow-hidden bg-white px-6 py-4 shadow-lg transition-colors md:flex md:w-auto md:min-w-0 md:flex-shrink md:items-center md:justify-center md:text-center ${activeSection === item.target && 'md:border-underline text-underline md:border-b-6 md:text-inherit'}`}
+                className={`hover:text-underline overflow-hidden bg-white shadow-lg transition-colors duration-200 md:flex md:w-auto md:min-w-0 md:flex-shrink md:items-center md:justify-center md:text-center ${activeSection === item.target && 'md:border-underline text-underline md:border-b-6 md:text-inherit'}`}
                 onClick={() => setActiveSection(item.target)}
               >
-                <a href={`#${item.target}`}>{item.title}</a>
+                <a
+                  className="block h-full w-full px-6 py-4"
+                  href={`#${item.target}`}
+                >
+                  {item.title}
+                </a>
               </li>
             ))}
           </ul>

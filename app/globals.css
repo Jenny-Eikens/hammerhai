@@ -26,3 +26,21 @@ body {
   font-size: 16;
   font-weight: 400;
 }
+
+#sidebar {
+  border-radius: 0 5px 5px 0;
+}
+
+.gigs {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(580px, 1fr));
+}
+
+.gig-details {
+  @apply flex items-center justify-center rounded-xl border border-black px-3;
+}
+
+.rotation {
+  writing-mode: sideways-lr;
+}

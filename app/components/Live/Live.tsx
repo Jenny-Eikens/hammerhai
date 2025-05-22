@@ -1,12 +1,25 @@
 import React from 'react'
 import Ticket from './Ticket/Ticket'
+import type { Concert } from '../Home'
 
-const Live = ({ concerts }) => {
+type ConcertProps = {
+  concerts: Concert[]
+}
+
+const Live = ({ concerts }: ConcertProps) => {
   return (
     <>
-      <div className="gigs border border-green-500">
+      <div className="gigs">
         {concerts.map((concert) => (
-          <div key={concert.id}>{concert.address}</div>
+          <Ticket
+            url={concert.venueImage.responsiveImage.src}
+            key={concert.id}
+            address={concert.address}
+            date={concert.date}
+            time={concert.time}
+            price={concert.price}
+            doors={concert.doors}
+          />
         ))}
       </div>
     </>

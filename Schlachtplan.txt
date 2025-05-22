@@ -1,2 +1,3 @@
 - learn about routing (App Router) -> Youtube video
 - figure out how to stop border from shifting text upwards
+- figure out good structure for data fetching function in page.tsx that includes error handling

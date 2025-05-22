@@ -2,12 +2,27 @@ import React from 'react'
 import Barcode from './Barcode'
 import Image from 'next/image'
 
-const Ticket = () => {
+type Ticket = {
+  key: string
+  url: string
+  address: string
+  date: string
+  time: string
+  price: number
+  doors: string
+}
+
+const Ticket = ({ url, address, date, time, price, doors }: Ticket) => {
+  const formattedDate = new Intl.DateTimeFormat('de-DE', {
+    day: '2-digit',
+    month: '2-digit',
+  }).format(new Date(date))
+
   return (
     <>
       <div className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] rounded-xs bg-white pr-1">
         <Image
-          src="/assets/images/Concerts/chezheinzrot.jpeg"
+          src={url}
           width={300}
           height={300}
           alt="Venue logo"
@@ -16,15 +31,13 @@ const Ticket = () => {
         <div className="flex w-full flex-col justify-between p-4">
           <div className="flex justify-between text-sm">
             <span>LIVE</span>
-            <span className="ml-4 text-right text-wrap">
-              Musterstraße 12, 12345 Postleitzahl
-            </span>
+            <span className="ml-4 text-right text-wrap">{address}</span>
           </div>
           <h1 className="text-4xl font-bold">Hammerhai</h1>
           <div className="flex justify-between">
-            <span className="gig-details">12.10.</span>
-            <span className="gig-details">20:00 Uhr</span>
-            <span className="gig-details">Preis: 10€</span>
+            <span className="gig-details">{formattedDate}</span>
+            <span className="gig-details">{time} Uhr</span>
+            <span className="gig-details">Preis: {price}€</span>
           </div>
         </div>
 
@@ -45,7 +58,7 @@ const Ticket = () => {
               <span className="text-xs">0123456789</span>
             </div>
             <span className="block text-sm font-semibold">
-              Einlass 19:30 Uhr
+              Einlass {doors} Uhr
             </span>
           </div>
         </div>

@@ -4,8 +4,38 @@ import Live from './Live/Live'
 import Sidebar from './Sidebar'
 import { useRef, useState, useEffect } from 'react'
 
-const Home = ({ concerts }) => {
-  const headerRef = useRef(null)
+type ResponsiveImage = {
+  width: number
+  webpSrcSet: string
+  title: string | null
+  srcSet: string
+  src: string
+  sizes: string
+  height: number
+  bgColor: string
+  base64: string
+  aspectRatio: number
+  alt: string | null
+}
+
+export type Concert = {
+  id: string
+  address: string
+  date: string
+  doors: string
+  price: number
+  time: string
+  venueImage: {
+    responsiveImage: ResponsiveImage
+  }
+}
+
+type ConcertProps = {
+  concerts: Concert[]
+}
+
+const Home = ({ concerts }: ConcertProps) => {
+  const headerRef = useRef<HTMLElement | null>(null)
   const [headerHeight, setHeaderHeight] = useState(0)
 
   useEffect(() => {
@@ -45,7 +75,7 @@ const Home = ({ concerts }) => {
       <div className="m-auto w-full max-w-[1600px]">
         <header
           ref={headerRef}
-          className="sticky top-0 z-100 h-max max-h-[200px] w-full border border-green-500 bg-transparent bg-white px-1 md:px-0 md:py-2"
+          className="sticky top-0 z-100 h-max max-h-[200px] w-full bg-white px-1 md:px-0 md:py-2"
         >
           <Header />
         </header>
@@ -54,7 +84,7 @@ const Home = ({ concerts }) => {
           {/* MAIN CONTENT */}
           <section
             id="home"
-            className="relative flex min-h-max flex-col border border-blue-500 bg-white"
+            className="relative flex min-h-max flex-col bg-white"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,

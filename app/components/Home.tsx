@@ -1,10 +1,11 @@
 'use client'
 import Header from './Header'
 import Live from './Live/Live'
+import Merch from './Merch'
 import Sidebar from './Sidebar'
 import { useRef, useState, useEffect } from 'react'
 
-type ResponsiveImage = {
+export type ResponsiveImage = {
   width: number
   webpSrcSet: string
   title: string | null
@@ -110,12 +111,14 @@ const Home = ({ concerts }: ConcertProps) => {
           </section>
           <section
             id="merch"
-            className="min-h-max bg-white"
+            className="min-h-max border border-green-500 bg-white p-8"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
             }}
-          ></section>
+          >
+            <Merch />
+          </section>
           <section
             id="about"
             className="bg-section-gray min-h-max"

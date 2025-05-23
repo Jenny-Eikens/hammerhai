@@ -1,8 +1,6 @@
 import React from 'react'
 import { performRequest } from '../lib/datocms'
-import { Image as DatoImage, RSCImage as DatoSRCImage } from 'react-datocms'
 import Home from './components/Home'
-import { error } from 'node:console'
 
 const CONCERT_QUERY = `query MyQuery {
   allConcerts {
@@ -13,7 +11,7 @@ const CONCERT_QUERY = `query MyQuery {
     price
     time
     venueImage {
-      responsiveImage {
+      responsiveImage(imgixParams: {fit: crop, auto: format, maxW: "180", maxH: "180"}) {
         width
         webpSrcSet
         title

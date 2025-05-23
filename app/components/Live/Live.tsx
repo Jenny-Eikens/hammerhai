@@ -12,7 +12,7 @@ const Live = ({ concerts }: ConcertProps) => {
       <div className="gigs">
         {concerts.map((concert) => (
           <Ticket
-            url={concert.venueImage.responsiveImage.src}
+            image={concert.venueImage.responsiveImage}
             key={concert.id}
             address={concert.address}
             date={concert.date}

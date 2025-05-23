@@ -1,10 +1,11 @@
 import React from 'react'
 import Barcode from './Barcode'
-import Image from 'next/image'
+import type { ResponsiveImage } from '../../Home'
+import { Image as DatoImage } from 'react-datocms'
 
 type Ticket = {
   key: string
-  url: string
+  image: ResponsiveImage
   address: string
   date: string
   time: string
@@ -12,7 +13,7 @@ type Ticket = {
   doors: string
 }
 
-const Ticket = ({ url, address, date, time, price, doors }: Ticket) => {
+const Ticket = ({ image, address, date, time, price, doors }: Ticket) => {
   const formattedDate = new Intl.DateTimeFormat('de-DE', {
     day: '2-digit',
     month: '2-digit',
@@ -21,20 +22,15 @@ const Ticket = ({ url, address, date, time, price, doors }: Ticket) => {
   return (
     <>
       <div className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] rounded-xs bg-white pr-1">
-        <Image
-          src={url}
-          width={300}
-          height={300}
-          alt="Venue logo"
-          className="inline aspect-square rounded-l-xs object-cover"
-        />
+        <DatoImage data={image} className="rounded-l-xs" />
+
         <div className="flex w-full flex-col justify-between p-4">
           <div className="flex justify-between text-sm">
             <span>LIVE</span>
             <span className="ml-4 text-right text-wrap">{address}</span>
           </div>
           <h1 className="text-4xl font-bold">Hammerhai</h1>
-          <div className="flex justify-between">
+          <div className="flex justify-between space-x-2">
             <span className="gig-details">{formattedDate}</span>
             <span className="gig-details">{time} Uhr</span>
             <span className="gig-details">Preis: {price}€</span>

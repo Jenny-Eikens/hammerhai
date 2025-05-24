@@ -1,4 +1,5 @@
 import React from 'react'
+import Music from './Music'
 
 const Merch = () => {
   return (
@@ -16,7 +17,10 @@ const Merch = () => {
           oder nutzt unser Kontaktformular
         </p>
         <p>Bitte angeben: die gewünschte Ware und Eure Adresse</p>
-        <p>Versandkosten: 2,70€ - 5€</p>
+        <p>Preis: Produktpreis zzgl. Versandkosten</p>
+
+        <Music />
+        <Merch />
       </div>
     </>
   )

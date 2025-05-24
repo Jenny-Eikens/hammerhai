@@ -1,7 +1,7 @@
 'use client'
 import Header from './Header'
 import Live from './Live/Live'
-import Merch from './Merch'
+import Merch from './Merch/Merch'
 import Sidebar from './Sidebar'
 import { useRef, useState, useEffect } from 'react'
 

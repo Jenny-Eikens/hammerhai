@@ -1,19 +1,16 @@
 import React from 'react'
 import Barcode from './Barcode'
-import type { ResponsiveImage } from '../../Home'
+import type { ConcertType } from '@/types/Concert'
 import { Image as DatoImage } from 'react-datocms'
 
-type Ticket = {
-  key: string
-  image: ResponsiveImage
-  address: string
-  date: string
-  time: string
-  price: number
-  doors: string
-}
-
-const Ticket = ({ image, address, date, time, price, doors }: Ticket) => {
+const Ticket = ({
+  venueImage,
+  address,
+  date,
+  time,
+  price,
+  doors,
+}: ConcertType) => {
   const formattedDate = new Intl.DateTimeFormat('de-DE', {
     day: '2-digit',
     month: '2-digit',
@@ -22,7 +19,7 @@ const Ticket = ({ image, address, date, time, price, doors }: Ticket) => {
   return (
     <>
       <div className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] rounded-xs bg-white pr-1">
-        <DatoImage data={image} className="rounded-l-xs" />
+        <DatoImage data={venueImage.responsiveImage} className="rounded-l-xs" />
 
         <div className="flex w-full flex-col justify-between p-4">
           <div className="flex justify-between text-sm">

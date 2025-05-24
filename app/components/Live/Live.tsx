@@ -1,9 +1,9 @@
 import React from 'react'
 import Ticket from './Ticket/Ticket'
-import type { Concert } from '../Home'
+import type { ConcertType } from '@/types/Concert'
 
 type ConcertProps = {
-  concerts: Concert[]
+  concerts: ConcertType[]
 }
 
 const Live = ({ concerts }: ConcertProps) => {
@@ -12,8 +12,9 @@ const Live = ({ concerts }: ConcertProps) => {
       <div className="gigs">
         {concerts.map((concert) => (
           <Ticket
-            image={concert.venueImage.responsiveImage}
+            id={concert.id}
             key={concert.id}
+            venueImage={concert.venueImage}
             address={concert.address}
             date={concert.date}
             time={concert.time}

@@ -1,26 +1,38 @@
 import React from 'react'
 import Music from './Music'
+import Clothing from './Clothing'
+import type { MusicType } from '@/types/music'
+import type { ClothingType } from '@/types/clothes'
 
-const Merch = () => {
+type MerchProps = {
+  music: MusicType[]
+  clothing: ClothingType[]
+}
+
+const Merch = ({ music, clothing }: MerchProps) => {
   return (
     <>
-      <div className="space-y-5 border border-blue-500 p-6 text-center text-lg">
-        <h1 className="text-4xl">Mailorder</h1>
-        <p>
-          Und so wird&apos;s gemacht: Schreibt einfach eine Mail an{' '}
-          <a
-            href="mailto:soelti@hammerhai.net"
-            className="text-underline underline"
-          >
-            soelti@hammerhai.net
-          </a>{' '}
-          oder nutzt unser Kontaktformular
-        </p>
-        <p>Bitte angeben: die gewünschte Ware und Eure Adresse</p>
-        <p>Preis: Produktpreis zzgl. Versandkosten</p>
+      <div className="space-y-5 border border-blue-500 p-[5rem] text-center text-lg">
+        <div className="mb-[6rem] space-y-5">
+          <h1 className="text-4xl">Mailorder</h1>
+          <p>
+            Und so wird&apos;s gemacht: Schreibt einfach eine Mail an{' '}
+            <a
+              href="mailto:soelti@hammerhai.net"
+              className="text-underline underline"
+            >
+              soelti@hammerhai.net
+            </a>{' '}
+            oder nutzt unser Kontaktformular
+          </p>
+          <p>Bitte angeben: die gewünschte Ware und Eure Adresse</p>
+          <p>Preis: Produktpreis zzgl. Versandkosten</p>
+        </div>
 
-        <Music />
-        <Merch />
+        <div className="space-y-[8rem]">
+          <Music music={music} />
+          <Clothing clothing={clothing} />
+        </div>
       </div>
     </>
   )

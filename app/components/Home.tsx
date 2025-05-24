@@ -4,38 +4,17 @@ import Live from './Live/Live'
 import Merch from './Merch/Merch'
 import Sidebar from './Sidebar'
 import { useRef, useState, useEffect } from 'react'
+import type { ConcertType } from '@/types/Concert'
+import type { MusicType } from '@/types/music'
+import type { ClothingType } from '@/types/clothes'
 
-export type ResponsiveImage = {
-  width: number
-  webpSrcSet: string
-  title: string | null
-  srcSet: string
-  src: string
-  sizes: string
-  height: number
-  bgColor: string
-  base64: string
-  aspectRatio: number
-  alt: string | null
+type HomeProps = {
+  concerts: ConcertType[]
+  music: MusicType[]
+  clothing: ClothingType[]
 }
 
-export type Concert = {
-  id: string
-  address: string
-  date: string
-  doors: string
-  price: number
-  time: string
-  venueImage: {
-    responsiveImage: ResponsiveImage
-  }
-}
-
-type ConcertProps = {
-  concerts: Concert[]
-}
-
-const Home = ({ concerts }: ConcertProps) => {
+const Home = ({ concerts, music, clothing }: HomeProps) => {
   const headerRef = useRef<HTMLElement | null>(null)
   const [headerHeight, setHeaderHeight] = useState(0)
 
@@ -117,7 +96,7 @@ const Home = ({ concerts }: ConcertProps) => {
               scrollMarginTop: `${headerHeight}px`,
             }}
           >
-            <Merch />
+            <Merch music={music} clothing={clothing} />
           </section>
           <section
             id="about"

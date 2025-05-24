@@ -26,6 +26,52 @@ const CONCERT_QUERY = `query MyQuery {
       }
     }
   }
+    allMusicArticles {
+    id
+    price
+    title
+    year
+    productImage {
+      responsiveImage(
+        imgixParams: {auto: format, fit: crop, maxH: "250", maxW: "250"}
+      ) {
+        alt
+        aspectRatio
+        base64
+        bgColor
+        height
+        sizes
+        src
+        srcSet
+        title
+        webpSrcSet
+        width
+      }
+    }
+  }
+    allClothingArticles {
+    id
+    name
+    price
+    productImage {
+      responsiveImage(
+        imgixParams: {fit: crop, auto: format}
+      ) {
+        alt
+        aspectRatio
+        base64
+        bgColor
+        height
+        sizes
+        src
+        srcSet
+        title
+        webpSrcSet
+        width
+      }
+    }
+    sizes
+  }
 }`
 
 const Page = async () => {
@@ -33,12 +79,11 @@ const Page = async () => {
     next: { revalidate: 60 },
   })
 
-  if (!res || !res.allConcerts) {
-    throw new Error('Fetching data failed')
-  }
-
   const concerts = res.allConcerts || []
-  return <Home concerts={concerts} />
+  const music = res.allMusicArticles || []
+  const clothing = res.allClothingArticles || []
+
+  return <Home concerts={concerts} music={music} clothing={clothing} />
 }
 
 export default Page

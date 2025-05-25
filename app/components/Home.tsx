@@ -7,6 +7,7 @@ import { useRef, useState, useEffect } from 'react'
 import type { ConcertType } from '@/types/concert'
 import type { MusicType } from '@/types/music'
 import type { ClothingType } from '@/types/clothes'
+import Footer from './Footer'
 
 type HomeProps = {
   concerts: ConcertType[]
@@ -115,7 +116,9 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             }}
           ></section>
         </main>
-        <footer></footer>
+        <footer className="bg-section-gray">
+          <Footer />
+        </footer>
       </div>
     </>
   )

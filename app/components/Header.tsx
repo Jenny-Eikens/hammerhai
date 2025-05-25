@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import Logo from './Logo/Logo'
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -54,17 +55,7 @@ const Header = () => {
             {menuOpen ? closeIcon : burgerIcon}
           </button>
           {/* Logo */}
-          <div
-            className="m-1 max-w-[270px] bg-white p-4 shadow-lg md:m-2 md:max-w-[300px]"
-            aria-label="Band logo"
-          >
-            <img
-              src="assets/images/Hammerhai-Logo-Neu.gif"
-              alt="Band logo"
-              className="mb-2 min-w-[200px]"
-            />
-            <p className="text-center md:text-lg">Punkrock & Ska seit 1997</p>
-          </div>
+          <Logo />
         </span>
 
         {/* Overlay */}

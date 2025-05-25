@@ -12,7 +12,7 @@ type MerchProps = {
 const Merch = ({ music, clothing }: MerchProps) => {
   return (
     <>
-      <div className="space-y-5 border border-blue-500 p-[5rem] text-center text-lg">
+      <div className="space-y-5 border border-blue-500 px-2 py-[3rem] text-center text-lg md:px-[5rem]">
         <div className="mb-[6rem] space-y-5">
           <h1 className="text-4xl">Mailorder</h1>
           <p>
@@ -29,7 +29,7 @@ const Merch = ({ music, clothing }: MerchProps) => {
           <p>Preis: Produktpreis zzgl. Versandkosten</p>
         </div>
 
-        <div className="space-y-[8rem]">
+        <div className="space-y-[6rem]">
           <Music music={music} />
           <Clothing clothing={clothing} />
         </div>

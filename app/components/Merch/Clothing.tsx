@@ -16,7 +16,10 @@ const Clothing = ({ clothing }: ClothingProps) => {
         <div className="clothing-grid border-2 border-blue-500">
           {clothing.map((clothingArticle) => (
             <>
-              <div className="space-y-2 border border-green-500">
+              <div
+                key={clothingArticle.id}
+                className="space-y-2 border border-green-500"
+              >
                 <div className="relative max-w-[250px]">
                   <DatoImage
                     data={clothingArticle.productImage.responsiveImage}

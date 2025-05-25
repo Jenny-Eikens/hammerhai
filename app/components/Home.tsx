@@ -4,7 +4,7 @@ import Live from './Live/Live'
 import Merch from './Merch/Merch'
 import Sidebar from './Sidebar'
 import { useRef, useState, useEffect } from 'react'
-import type { ConcertType } from '@/types/Concert'
+import type { ConcertType } from '@/types/concert'
 import type { MusicType } from '@/types/music'
 import type { ClothingType } from '@/types/clothes'
 
@@ -55,7 +55,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
       <div className="m-auto w-full max-w-[1600px]">
         <header
           ref={headerRef}
-          className="sticky top-0 z-100 h-max max-h-[200px] w-full bg-white px-1 md:px-0 md:py-2"
+          className="sticky top-0 z-100 h-max max-h-[200px] w-full bg-white p-1 shadow-sm md:max-h-[300px] md:px-0 md:py-2 md:shadow-none"
         >
           <Header />
         </header>
@@ -64,7 +64,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           {/* MAIN CONTENT */}
           <section
             id="home"
-            className="relative flex min-h-max flex-col bg-white"
+            className="relative flex flex-col bg-white"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
@@ -80,7 +80,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           </section>
           <section
             id="live"
-            className="bg-section-gray min-h-max p-8"
+            className="bg-section-gray min-h-max overflow-clip p-8 md:p-[4rem]"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
@@ -90,7 +90,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           </section>
           <section
             id="merch"
-            className="min-h-max border border-green-500 bg-white p-8"
+            className="min-h-max border border-green-500 bg-white px-2 md:px-8"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,

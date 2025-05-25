@@ -1,4 +1,4 @@
 - learn about routing (App Router) -> Youtube video
 - figure out how to stop border from shifting text upwards
-- figure out good structure for data fetching function in page.tsx that includes error handling
 - come up with alternate ticket design for small screens (ticket is too big / would appear too small if shrunken down)
+- find out if limiting div width or image width (in query) is better

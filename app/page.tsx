@@ -28,12 +28,12 @@ const CONCERT_QUERY = `query MyQuery {
   }
     allMusicArticles {
     id
-    price
+    price 
     title
     year
     productImage {
       responsiveImage(
-        imgixParams: {auto: format, fit: crop, maxH: "250", maxW: "250"}
+        imgixParams: {auto: format, fit: crop}
       ) {
         alt
         aspectRatio
@@ -75,15 +75,20 @@ const CONCERT_QUERY = `query MyQuery {
 }`
 
 const Page = async () => {
-  const res = await performRequest(CONCERT_QUERY, {
-    next: { revalidate: 60 },
-  })
+  try {
+    const res = await performRequest(CONCERT_QUERY, {
+      next: { revalidate: 60 },
+    })
 
-  const concerts = res.allConcerts || []
-  const music = res.allMusicArticles || []
-  const clothing = res.allClothingArticles || []
+    const concerts = res.allConcerts || []
+    const music = res.allMusicArticles || []
+    const clothing = res.allClothingArticles || []
 
-  return <Home concerts={concerts} music={music} clothing={clothing} />
+    return <Home concerts={concerts} music={music} clothing={clothing} />
+  } catch (error) {
+    console.error('Page failed to load data:', error)
+    throw error
+  }
 }
 
 export default Page

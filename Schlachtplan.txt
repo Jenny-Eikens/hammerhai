@@ -4,6 +4,7 @@
 - find out if limiting div width or image width (in query) is better
 - make Datenschutz and Disclaimer in footer into links
 - design separate mobile footer
+- make Ticket component link to gig
 
 - Pressepaket organisieren
 - klären, welche Socials in Sidebar verlinkt werden sollen

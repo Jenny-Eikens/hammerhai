@@ -12,7 +12,7 @@ type MerchProps = {
 const Merch = ({ music, clothing }: MerchProps) => {
   return (
     <>
-      <div className="space-y-5 border border-blue-500 px-2 py-[3rem] text-center text-lg md:px-[5rem]">
+      <div className="space-y-5 px-2 py-[3rem] text-center text-lg md:px-[5rem]">
         <div className="mb-[6rem] space-y-5">
           <h1 className="text-4xl">Mailorder</h1>
           <p>
@@ -26,7 +26,7 @@ const Merch = ({ music, clothing }: MerchProps) => {
             oder nutzt unser Kontaktformular
           </p>
           <p>Bitte angeben: die gewünschte Ware und Eure Adresse</p>
-          <p>Preis: Produktpreis zzgl. Versandkosten</p>
+          <p>Preise zzgl. Versandkosten</p>
         </div>
 
         <div className="space-y-[6rem]">

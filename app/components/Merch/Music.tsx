@@ -10,7 +10,7 @@ const Music = ({ music }: MusicProps) => {
   return (
     <>
       <div className="border border-red-500">
-        <div className="mb-8 text-left">
+        <div className="mb-8 text-left md:mb-10">
           <h2 className="bg-navbar inline p-2 shadow-md">CD / Vinyl / DVD</h2>
         </div>
         <div className="music-grid border-2 border-blue-500">

@@ -8,6 +8,7 @@ import type { ConcertType } from '@/types/concert'
 import type { MusicType } from '@/types/music'
 import type { ClothingType } from '@/types/clothes'
 import Footer from './Footer'
+import Carousel from './About/ImageSlider'
 
 type HomeProps = {
   concerts: ConcertType[]
@@ -81,7 +82,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           </section>
           <section
             id="live"
-            className="bg-section-gray min-h-max overflow-clip p-8 md:p-[4rem]"
+            className="bg-section-gray min-h-max overflow-clip p-8 md:p-[3rem]"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
@@ -91,7 +92,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           </section>
           <section
             id="merch"
-            className="min-h-max border border-green-500 bg-white px-2 md:px-8"
+            className="min-h-max bg-white px-2 md:px-8"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
@@ -115,6 +116,10 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               scrollMarginTop: `${headerHeight}px`,
             }}
           ></section>
+
+          <section>
+            <Carousel />
+          </section>
         </main>
         <footer className="bg-section-gray">
           <Footer />

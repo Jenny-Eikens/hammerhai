@@ -9,17 +9,14 @@ type ClothingProps = {
 const Clothing = ({ clothing }: ClothingProps) => {
   return (
     <>
-      <div className="border border-red-500">
-        <div className="mb-8 text-left">
+      <div>
+        <div className="mb-8 text-left md:mb-10">
           <h2 className="bg-navbar inline p-2 shadow-md">Textilien</h2>
         </div>
-        <div className="clothing-grid border-2 border-blue-500">
+        <div className="clothing-grid">
           {clothing.map((clothingArticle) => (
             <>
-              <div
-                key={clothingArticle.id}
-                className="space-y-2 border border-green-500"
-              >
+              <div key={clothingArticle.id} className="space-y-2">
                 <div className="relative max-w-[250px]">
                   <DatoImage
                     data={clothingArticle.productImage.responsiveImage}

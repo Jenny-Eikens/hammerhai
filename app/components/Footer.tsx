@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="scale-75 transform sm:-translate-x-[14%] sm:-translate-y-[15%] md:origin-top-left md:-translate-x-[2.5%] md:-translate-y-[4.5%]">
             <Logo />
           </div>
-          <div className="mb-4 flex flex-col flex-wrap space-y-4 gap-y-4 sm:mb-0 sm:flex-row sm:space-y-0 sm:space-x-[2rem] lg:space-x-[4rem]">
+          <div className="mb-4 flex flex-col flex-wrap space-y-4 gap-y-6 sm:mb-0 sm:flex-row sm:space-y-0 sm:space-x-[2rem] lg:space-x-[3rem]">
             <div className="footer-details">
               <h4>BOOKING & KONKTAKT</h4>
               <address className="not-italic">

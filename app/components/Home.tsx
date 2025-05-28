@@ -2,7 +2,7 @@
 import Header from './Header'
 import Live from './Live/Live'
 import Merch from './Merch/Merch'
-import Sidebar from './Sidebar'
+import Sidebar from './Home/Sidebar'
 import { useRef, useState, useEffect } from 'react'
 import type { ConcertType } from '@/types/concert'
 import type { MusicType } from '@/types/music'
@@ -10,6 +10,7 @@ import type { ClothingType } from '@/types/clothes'
 import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import Footer from './Footer'
 import Carousel from './About/ImageSlider'
+import Contact from './Contact'
 
 type HomeProps = {
   concerts: ConcertType[]
@@ -106,18 +107,20 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           <section
             id="contact"
             aria-label="Kontakt"
-            className="min-h-max bg-white"
+            className="min-h-max bg-white py-[3rem]"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
             }}
-          ></section>
+          >
+            <Contact />
+          </section>
 
           <section>
             <Carousel />
           </section>
         </main>
-        <footer aria-label="Footer" className="bg-section-gray">
+        <footer aria-label="Footer" id="footer" className="bg-section-gray">
           <Footer />
         </footer>
       </div>

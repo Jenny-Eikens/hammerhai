@@ -23,10 +23,19 @@ const Contact = () => {
     },
   })
 
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data)
-    setIsSubmitted(true)
-    reset()
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
+    const response = await fetch('https://formspree.io/f/movdgpok', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    })
+
+    if (response.ok) {
+      setIsSubmitted(true)
+      reset()
+    } else {
+      console.error('Submission failed')
+    }
   }
 
   return (
@@ -39,7 +48,7 @@ const Contact = () => {
         <form
           noValidate
           className="bg-underline m-auto w-[95vw] max-w-[800px] space-y-2 rounded-md p-8 text-white"
-          action="https://formsubmit.co/jennifereikens@web.de"
+          action="https://formspree.io/f/movdgpok"
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
         >
@@ -72,7 +81,9 @@ const Contact = () => {
                   aria-describedby={errors.fname ? 'fname-error' : undefined}
                 />
                 {errors.fname && (
-                  <p className="error-message">{errors.fname.message}</p>
+                  <p id="fname-error" className="error-message">
+                    {errors.fname.message}
+                  </p>
                 )}
               </div>
 
@@ -96,7 +107,9 @@ const Contact = () => {
                   aria-describedby={errors.lname ? 'lname-error' : undefined}
                 />
                 {errors.lname && (
-                  <p className="error-message">{errors.lname.message} </p>
+                  <p id="lname-error" className="error-message">
+                    {errors.lname.message}{' '}
+                  </p>
                 )}
               </div>
             </div>
@@ -121,7 +134,9 @@ const Contact = () => {
                 aria-describedby={errors.email ? 'email-error' : undefined}
               />
               {errors.email && (
-                <p className="error-message">{errors.email.message} </p>
+                <p id="email-error" className="error-message">
+                  {errors.email.message}{' '}
+                </p>
               )}
             </div>
 
@@ -145,7 +160,9 @@ const Contact = () => {
                 placeholder="Telefonnummer (optional)"
               />
               {errors.phone && (
-                <p className="error-message">{errors.phone.message}</p>
+                <p id="phone-error" className="error-message">
+                  {errors.phone.message}
+                </p>
               )}
             </div>
 
@@ -161,8 +178,13 @@ const Contact = () => {
                 id="message"
                 placeholder="Nachricht"
                 className={`field-sizing-content max-h-[12lh] min-h-[5lh] w-full resize-none ${errors.message && 'error'}`}
+                aria-describedby={errors.message ? 'message-error' : undefined}
               ></textarea>
-              {errors.message && <p className="error-message">Pflichtfeld</p>}
+              {errors.message && (
+                <p id="message-error" className="error-message">
+                  Pflichtfeld
+                </p>
+              )}
             </div>
 
             <button

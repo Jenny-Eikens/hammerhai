@@ -27,7 +27,10 @@ const Carousel = () => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative" aria-label="Bildergallerie">
+      <a href="#contact" className="skip-link">
+        Bildergallerie überspringen
+      </a>
       <div
         className="relative mx-auto mb-10 w-full max-w-2xl overflow-hidden"
         {...handlers}
@@ -43,6 +46,7 @@ const Carousel = () => {
               src={src}
               alt={`Slide ${index + 1}`}
               className="h-64 w-full flex-shrink-0 object-cover"
+              aria-hidden={currentIndex !== index}
             />
           ))}
         </div>
@@ -51,16 +55,16 @@ const Carousel = () => {
         <button
           onClick={prevSlide}
           aria-label="Zu vorigem Bild"
-          className="text-underline absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-white/50 p-2 hover:cursor-pointer"
+          className="img-nav-btn left-3"
         >
-          <ChevronLeftIcon strokeWidth={2} />
+          <ChevronLeftIcon className="h-6 w-6" strokeWidth={2} />
         </button>
         <button
           onClick={nextSlide}
           aria-label="Zu nächstem Bild"
-          className="text-underline absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-white/50 p-2 hover:cursor-pointer"
+          className="img-nav-btn right-3"
         >
-          <ChevronRightIcon strokeWidth={2} />
+          <ChevronRightIcon className="h-6 w-6" strokeWidth={2} />
         </button>
       </div>
       <div className="absolute bottom-[-1.5rem] left-1/2 flex -translate-x-1/2 gap-4">
@@ -68,7 +72,7 @@ const Carousel = () => {
           <button
             key={index}
             aria-label={`Zu Bild ${index + 1}`}
-            className={`bg-underline h-3 w-3 rounded-full border-none p-1 transition-all ${currentIndex === index ? 'bg-underline scale-125 transition-all' : 'bg-underline/75'} hover:scale-125 hover:cursor-pointer`}
+            className={`bg-underline h-3 w-3 rounded-full border-none p-1 transition-all ${currentIndex === index ? 'bg-underline scale-125 transition-all' : 'bg-underline/75'} hover:scale-125 hover:cursor-pointer focus-visible:scale-125`}
             onClick={() => setCurrentIndex(index)}
           ></button>
         ))}

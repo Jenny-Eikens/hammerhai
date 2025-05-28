@@ -7,6 +7,7 @@ import { useRef, useState, useEffect } from 'react'
 import type { ConcertType } from '@/types/concert'
 import type { MusicType } from '@/types/music'
 import type { ClothingType } from '@/types/clothes'
+import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import Footer from './Footer'
 import Carousel from './About/ImageSlider'
 
@@ -35,37 +36,25 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
     }
   }, [])
 
-  const downArrow = (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth="1.5"
-      stroke="currentColor"
-      className="size-6"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3"
-      />
-    </svg>
-  )
-
   return (
     <>
+      <a href="#main-content" className="skip-link">
+        Navigation überspringen
+      </a>
       <div className="m-auto w-full max-w-[1600px]">
         <header
           ref={headerRef}
+          aria-label="Header"
           className="sticky top-0 z-100 h-max max-h-[200px] w-full bg-white p-1 shadow-sm md:max-h-[300px] md:px-0 md:py-2 md:shadow-none"
         >
           <Header />
         </header>
 
-        <main className="border border-red-500">
+        <main id="main-content" className="border border-red-500">
           {/* MAIN CONTENT */}
           <section
             id="home"
+            aria-label="Startseite"
             className="relative flex flex-col bg-white"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
@@ -75,13 +64,17 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             <Sidebar />
             <a
               href="#live"
-              className="mx-auto mt-auto mb-4 hidden h-[4rem] w-[4rem] items-center justify-center rounded-full bg-white shadow-xl transition-all ease-out hover:scale-[1.2] hover:cursor-pointer md:flex"
+              role="button"
+              id="next-section"
+              aria-label="Zu nächstem Abschnitt"
+              className="mx-auto mt-auto mb-4 hidden h-[4rem] w-[4rem] items-center justify-center rounded-full bg-white p-2 shadow-xl transition-all ease-out hover:scale-[1.2] hover:cursor-pointer md:flex"
             >
-              <span className="text-underline scale-150">{downArrow}</span>
+              <ArrowDownIcon className="text-underline h-10 w-10" />
             </a>
           </section>
           <section
             id="live"
+            aria-label="Anstehende Konzerte"
             className="bg-section-gray min-h-max overflow-clip p-8 md:p-[3rem]"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
@@ -92,6 +85,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           </section>
           <section
             id="merch"
+            aria-label="Merch"
             className="min-h-max bg-white px-2 md:px-8"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
@@ -102,6 +96,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           </section>
           <section
             id="about"
+            aria-label="Über uns"
             className="bg-section-gray min-h-max"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
@@ -110,6 +105,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           ></section>
           <section
             id="contact"
+            aria-label="Kontakt"
             className="min-h-max bg-white"
             style={{
               height: `calc(100vh - ${headerHeight}px)`,
@@ -121,7 +117,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             <Carousel />
           </section>
         </main>
-        <footer className="bg-section-gray">
+        <footer aria-label="Footer" className="bg-section-gray">
           <Footer />
         </footer>
       </div>

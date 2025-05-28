@@ -18,7 +18,10 @@ const Ticket = ({
 
   return (
     <>
-      <div className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] rounded-xs bg-white pr-1">
+      <div
+        className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] rounded-xs bg-white pr-1"
+        aria-label="Live-Termin"
+      >
         <DatoImage data={venueImage.responsiveImage} className="rounded-l-xs" />
 
         <div className="flex w-full flex-col justify-between p-4">
@@ -44,7 +47,7 @@ const Ticket = ({
           <Barcode />
         </div>
 
-        <div className="m-auto p-1">
+        <div className="m-auto p-1" aria-hidden>
           <div className="rotation h-[9rem] space-y-3">
             <div className="flex w-full justify-between">
               <span className="text-xs">Ticket-Nr.</span>

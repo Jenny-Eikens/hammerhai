@@ -4,8 +4,12 @@ import Image from 'next/image'
 const Sidebar = () => {
   return (
     <>
+      <a href="#next-section" className="skip-link">
+        Soziale Netzwerke überspringen
+      </a>
       <div
         id="sidebar"
+        aria-label="Links zu sozialen Netzwerken"
         className="bg-navbar relative top-1/2 left-0 hidden w-max -translate-y-1/2 space-y-10 p-3 shadow-md md:flex md:flex-col"
       >
         <a

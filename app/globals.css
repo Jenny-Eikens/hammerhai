@@ -28,6 +28,14 @@ body {
   font-weight: 400;
 }
 
+.skip-link {
+  @apply absolute z-[150] m-0 h-[1px] w-[1px] overflow-hidden border-none p-0;
+}
+
+.skip-link:focus-visible {
+  @apply border-underline top-0 left-0 h-auto w-auto border-2 p-2;
+}
+
 #sidebar {
   border-radius: 0 5px 5px 0;
 }
@@ -51,6 +59,10 @@ body {
   display: grid;
   gap: 2rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.img-nav-btn {
+  @apply text-underline absolute top-1/2 -translate-y-1/2 transform rounded-full bg-white/50 p-2 hover:cursor-pointer;
 }
 
 .footer-details {

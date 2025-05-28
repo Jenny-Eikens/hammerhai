@@ -49,7 +49,7 @@ const Header = () => {
           {/* button hidden starting at medium-sized screens */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={menuOpen ? 'Menü schließen' : 'Menü öffnen'}
             className="bg-navbar sticky top-0 z-50 scale-150 p-1 md:hidden" // z-index ensures button isn't hidden under overlay
           >
             {menuOpen ? closeIcon : burgerIcon}
@@ -62,7 +62,7 @@ const Header = () => {
         <div
           className={`fixed inset-0 z-30 bg-black/50 transition-opacity duration-300 ${menuOpen ? 'pointer-events-auto opacity-100' : 'pointer-events-none opacity-0'}`}
           onClick={() => setMenuOpen(false)}
-          aria-hidden="true"
+          aria-hidden
         ></div>
 
         {/* Nav bar */}
@@ -79,7 +79,7 @@ const Header = () => {
                 onClick={() => setActiveSection(item.target)}
               >
                 <a
-                  className="block h-full w-full px-6 py-4"
+                  className="focus-visible:text-underline block h-full w-full px-6 py-4"
                   href={`#${item.target}`}
                 >
                   {item.title}

@@ -51,7 +51,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           <Header />
         </header>
 
-        <main id="main-content" className="border border-red-500">
+        <main id="main-content">
           {/* MAIN CONTENT */}
           <section
             id="home"
@@ -76,9 +76,9 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           <section
             id="live"
             aria-label="Anstehende Konzerte"
-            className="bg-section-gray min-h-max overflow-clip p-8 md:p-[3rem]"
+            className="bg-section-gray flex w-full items-start justify-center overflow-clip px-2 py-6 sm:p-8 md:block md:p-[3rem]"
             style={{
-              height: `calc(100vh - ${headerHeight}px)`,
+              minHeight: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
             }}
           >
@@ -89,7 +89,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             aria-label="Merch"
             className="min-h-max bg-white px-2 md:px-8"
             style={{
-              height: `calc(100vh - ${headerHeight}px)`,
+              minHeight: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
             }}
           >
@@ -100,7 +100,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             aria-label="Über uns"
             className="bg-section-gray min-h-max"
             style={{
-              height: `calc(100vh - ${headerHeight}px)`,
+              minHeight: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
             }}
           ></section>
@@ -109,7 +109,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             aria-label="Kontakt"
             className="min-h-max bg-white py-[3rem]"
             style={{
-              height: `calc(100vh - ${headerHeight}px)`,
+              minHeight: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
             }}
           >

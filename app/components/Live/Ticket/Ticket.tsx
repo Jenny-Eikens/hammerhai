@@ -1,6 +1,6 @@
 import React from 'react'
 import Barcode from './Barcode'
-import type { ConcertType } from '@/types/Concert'
+import type { ConcertType } from '@/types/concert'
 import { Image as DatoImage } from 'react-datocms'
 
 const Ticket = ({
@@ -19,7 +19,7 @@ const Ticket = ({
   return (
     <>
       <div
-        className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] rounded-xs bg-white pr-1"
+        className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] origin-top scale-[58%] rounded-xs bg-white pr-1 sm:scale-90 md:scale-100"
         aria-label="Live-Termin"
       >
         <DatoImage data={venueImage.responsiveImage} className="rounded-l-xs" />

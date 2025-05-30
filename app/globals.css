@@ -44,10 +44,15 @@ body {
 
 /*------------------------------------------------------------------------------------------------------*/
 
-.gigs {
+.gigs-grid {
   display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 0;
+  grid-template-columns: repeat(auto-fit, minmax(620px, 1fr));
+  @apply sm:gap-[1rem] md:gap-[2rem];
+}
+
+.gig-wrapper {
+  @apply mb-[-3rem] sm:mb-0;
 }
 
 .gig-details {
@@ -82,7 +87,9 @@ form input:focus-visible {
   @apply outline;
 }
 
-#name {
+#name,
+#town,
+#street {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

@@ -1,6 +1,6 @@
 import React from 'react'
 import Ticket from './Ticket/Ticket'
-import type { ConcertType } from '@/types/Concert'
+import type { ConcertType } from '@/types/concert'
 
 type ConcertProps = {
   concerts: ConcertType[]
@@ -9,18 +9,50 @@ type ConcertProps = {
 const Live = ({ concerts }: ConcertProps) => {
   return (
     <>
-      <div className="gigs">
+      <div className="gigs-grid">
         {concerts.map((concert) => (
-          <Ticket
-            id={concert.id}
-            key={concert.id}
-            venueImage={concert.venueImage}
-            address={concert.address}
-            date={concert.date}
-            time={concert.time}
-            price={concert.price}
-            doors={concert.doors}
-          />
+          <>
+            <Ticket
+              id={concert.id}
+              key={concert.id}
+              venueImage={concert.venueImage}
+              address={concert.address}
+              date={concert.date}
+              time={concert.time}
+              price={concert.price}
+              doors={concert.doors}
+            />
+            {/* <Ticket
+              id={concert.id}
+              key={concert.id}
+              venueImage={concert.venueImage}
+              address={concert.address}
+              date={concert.date}
+              time={concert.time}
+              price={concert.price}
+              doors={concert.doors}
+            />
+            <Ticket
+              id={concert.id}
+              key={concert.id}
+              venueImage={concert.venueImage}
+              address={concert.address}
+              date={concert.date}
+              time={concert.time}
+              price={concert.price}
+              doors={concert.doors}
+            />
+            <Ticket
+              id={concert.id}
+              key={concert.id}
+              venueImage={concert.venueImage}
+              address={concert.address}
+              date={concert.date}
+              time={concert.time}
+              price={concert.price}
+              doors={concert.doors}
+            /> */}
+          </>
         ))}
       </div>
     </>

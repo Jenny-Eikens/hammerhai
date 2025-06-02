@@ -2,7 +2,7 @@ import React from 'react'
 import { performRequest } from '../lib/datocms'
 import Home from './components/Home'
 
-const CONCERT_QUERY = `query MyQuery {
+const HOMEPAGE_QUERY = `query MyQuery {
   allConcerts {
     id
     address
@@ -76,7 +76,7 @@ const CONCERT_QUERY = `query MyQuery {
 
 const Page = async () => {
   try {
-    const res = await performRequest(CONCERT_QUERY, {
+    const res = await performRequest(HOMEPAGE_QUERY, {
       next: { revalidate: 60 },
     })
 

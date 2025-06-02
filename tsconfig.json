@@ -29,7 +29,8 @@
     ".next/types/**/*.ts",
     "tailwind.config.mjs",
     "tailwind.config.js",
-    "postcss.config.js"
+    "postcss.config.js",
+    "lib/datocms.js"
   ],
   "exclude": ["node_modules"]
 }

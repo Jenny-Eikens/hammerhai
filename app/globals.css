@@ -117,3 +117,17 @@ form input:focus-visible {
 .footer-details div {
   @apply text-xs md:text-sm;
 }
+
+/*------------------------------------------------------------------------------------------------------*/
+
+.copyright-wrapper h2 {
+  @apply mb-2 text-lg font-semibold;
+}
+
+.copyright-wrapper a {
+  @apply text-underline underline;
+}
+
+.copyright-wrapper a:visited {
+  @apply text-red-500;
+}

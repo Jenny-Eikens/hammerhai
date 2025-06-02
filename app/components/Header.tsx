@@ -4,10 +4,10 @@ import { useState } from 'react'
 import Logo from './Logo/Logo'
 import { Bars4Icon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from '@heroicons/react/24/outline'
+import type { ActiveSectionType } from '@/types/activesection'
 
-const Header = () => {
+const Header = ({ activeSection, setActiveSection }: ActiveSectionType) => {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [activeSection, setActiveSection] = useState<string>('')
 
   return (
     <>

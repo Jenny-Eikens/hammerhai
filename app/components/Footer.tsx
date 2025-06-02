@@ -1,5 +1,6 @@
 import React from 'react'
 import Logo from './Logo/Logo'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -27,7 +28,13 @@ const Footer = () => {
             </div>
             <div className="footer-details">
               <h4>INFORMATION</h4>
-              <div>Datenschutz</div>
+              <Link
+                href="/datenschutz"
+                target="_blank"
+                className="text-xs md:text-sm"
+              >
+                Datenschutz
+              </Link>
               <div>Disclaimer</div>
             </div>
             <div className="footer-details">

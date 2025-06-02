@@ -7,7 +7,6 @@ import { ArrowLongRightIcon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 
 const Contact = () => {
-  const [isSubmitted, setIsSubmitted] = useState<boolean>(false)
   const [isOpen, setIsOpen] = useState(false)
   const dialogRef = useRef<HTMLDialogElement>(null)
 
@@ -44,14 +43,13 @@ const Contact = () => {
   })
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const response = await fetch('https://formspree.io/f/movdgpok', {
+    const response = await fetch('https://formspree.io/f/FORMSPREE_KEY', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data),
     })
 
     if (response.ok) {
-      setIsSubmitted(true)
       reset()
       handleOpenModal()
     } else {
@@ -73,7 +71,6 @@ const Contact = () => {
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
         >
-          {isSubmitted && <p>Success!</p>}
           <h2 className="text-[2rem]">Kontakt</h2>
           <p className="text-white/80">
             Schreibt uns gerne eine Nachricht mit eurem Anliegen und wir melden

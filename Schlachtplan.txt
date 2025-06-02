@@ -1,10 +1,7 @@
 - learn about routing (App Router) -> Youtube video
 - figure out how to stop border from shifting text upwards
-- come up with alternate ticket design for small screens (ticket is too big / would appear too small if shrunken down)
 
-- make Datenschutz and Disclaimer in footer into links
+- make Disclaimer in footer into links
 - make Ticket component link to gig
-- add intersection observer for nav link highlighting
-- add success message modal to form
 
 - Pressepaket organisieren

@@ -4,6 +4,7 @@ import Live from './Live/Live'
 import Merch from './Merch/Merch'
 import Sidebar from './Home/Sidebar'
 import { useRef, useState, useEffect } from 'react'
+import { useInView } from 'react-intersection-observer'
 import type { ConcertType } from '@/types/concert'
 import type { MusicType } from '@/types/music'
 import type { ClothingType } from '@/types/clothes'
@@ -20,7 +21,16 @@ type HomeProps = {
 
 const Home = ({ concerts, music, clothing }: HomeProps) => {
   const headerRef = useRef<HTMLElement | null>(null)
+  const [activeSection, setActiveSection] = useState<string>('')
   const [headerHeight, setHeaderHeight] = useState(0)
+
+  const { ref: homeRef, inView: homeInView } = useInView({ threshold: 0.6 })
+  const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
+  const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.6 })
+  const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.6 })
+  const { ref: contactRef, inView: contactInView } = useInView({
+    threshold: 0.6,
+  })
 
   useEffect(() => {
     const updateHeaderHeight = () => {
@@ -37,6 +47,14 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (homeInView) setActiveSection('home')
+    else if (liveInView) setActiveSection('live')
+    else if (merchInView) setActiveSection('merch')
+    else if (aboutInView) setActiveSection('about')
+    else if (contactInView) setActiveSection('contact')
+  }, [homeInView, liveInView, merchInView, aboutInView, contactInView])
+
   return (
     <>
       <a href="#main-content" className="skip-link">
@@ -48,12 +66,16 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           aria-label="Header"
           className="sticky top-0 z-100 h-max max-h-[200px] w-full bg-white p-1 shadow-sm md:max-h-[300px] md:px-0 md:py-2 md:shadow-none"
         >
-          <Header />
+          <Header
+            activeSection={activeSection}
+            setActiveSection={setActiveSection}
+          />
         </header>
 
         <main id="main-content">
           {/* MAIN CONTENT */}
           <section
+            ref={homeRef}
             id="home"
             aria-label="Startseite"
             className="relative flex flex-col bg-white"
@@ -74,6 +96,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             </a>
           </section>
           <section
+            ref={liveRef}
             id="live"
             aria-label="Anstehende Konzerte"
             className="bg-section-gray flex w-full items-start justify-center overflow-clip px-2 py-6 sm:p-8 md:block md:p-[3rem]"
@@ -85,6 +108,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             <Live concerts={concerts} />
           </section>
           <section
+            ref={merchRef}
             id="merch"
             aria-label="Merch"
             className="min-h-max bg-white px-2 md:px-8"
@@ -96,6 +120,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             <Merch music={music} clothing={clothing} />
           </section>
           <section
+            ref={aboutRef}
             id="about"
             aria-label="Über uns"
             className="bg-section-gray min-h-max"
@@ -105,6 +130,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             }}
           ></section>
           <section
+            ref={contactRef}
             id="contact"
             aria-label="Kontakt"
             className="min-h-max bg-white py-[3rem]"

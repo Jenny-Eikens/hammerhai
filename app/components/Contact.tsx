@@ -19,7 +19,7 @@ const Contact = () => {
 
   const handleCloseModal = () => {
     setIsOpen(false)
-    setTimeout(() => dialogRef.current?.close(), 400)
+    setTimeout(() => dialogRef.current?.close(), 500)
   }
 
   const {
@@ -343,6 +343,7 @@ const Contact = () => {
             </div>
 
             <button
+              onClick={handleOpenModal}
               type="submit"
               className="text-underline group flex items-center justify-center space-x-2 rounded-md bg-white/85 p-2 transition-colors hover:cursor-pointer hover:bg-white"
             >
@@ -354,7 +355,7 @@ const Contact = () => {
 
         <dialog
           ref={dialogRef}
-          className={`fixed top-1 left-1/2 z-[500] w-[95%] max-w-2xl -translate-x-1/2 rounded-md p-6 shadow-md transition-transform duration-400 ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
+          className={`fixed top-1 left-1/2 z-[500] w-[95%] max-w-2xl -translate-x-1/2 rounded-md p-6 shadow-md transition-all duration-500 ${isOpen ? 'translate-y-0 opacity-100' : 'opactiy-0 -translate-y-full'}`}
         >
           <div className="flex justify-between">
             <h3 className="text-lg font-semibold">

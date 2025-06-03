@@ -26,7 +26,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
 
   const { ref: homeRef, inView: homeInView } = useInView({ threshold: 0.6 })
   const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
-  const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.6 })
+  const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.5 })
   const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.6 })
   const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 0.6,
@@ -114,7 +114,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             className="min-h-max bg-white px-2 md:px-8"
             style={{
               minHeight: `calc(100vh - ${headerHeight}px)`,
-              scrollMarginTop: `${headerHeight}px`,
+              scrollMarginTop: `calc(${headerHeight - 1}px )`,
             }}
           >
             <Merch music={music} clothing={clothing} />
@@ -136,7 +136,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             className="min-h-max bg-white py-[3rem]"
             style={{
               minHeight: `calc(100vh - ${headerHeight}px)`,
-              scrollMarginTop: `${headerHeight}px`,
+              scrollMarginTop: `calc(${headerHeight - 1}px )`,
             }}
           >
             <Contact />

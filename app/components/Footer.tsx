@@ -1,6 +1,16 @@
 import React from 'react'
 import Logo from './Logo/Logo'
 import Link from 'next/link'
+import Image from 'next/image'
+import {
+  faSpotify,
+  faYoutube,
+  faFacebook,
+  faBandcamp,
+  faDeezer,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Footer = () => {
   return (
@@ -28,18 +38,10 @@ const Footer = () => {
             </div>
             <div className="footer-details">
               <h4>INFORMATION</h4>
-              <Link
-                href="/datenschutz"
-                target="_blank"
-                className="block text-xs md:text-sm"
-              >
+              <Link href="/datenschutz" className="block text-xs md:text-sm">
                 Datenschutz
               </Link>
-              <Link
-                href="/disclaimer"
-                target="_blank"
-                className="block text-xs md:text-sm"
-              >
+              <Link href="/disclaimer" className="block text-xs md:text-sm">
                 Disclaimer
               </Link>
             </div>
@@ -67,14 +69,87 @@ const Footer = () => {
             </a>
             .{' '}
           </div>
-          <div className="mb-8 flex flex-wrap justify-center space-x-5 gap-y-5 sm:mb-0 md:justify-start">
-            <div className="h-10 w-10 bg-black"></div>
-            <div className="h-10 w-10 bg-black"></div>
-            <div className="h-10 w-10 bg-black"></div>
-            <div className="h-10 w-10 bg-black"></div>
-            <div className="h-10 w-10 bg-black"></div>
-            <div className="h-10 w-10 bg-black"></div>
-            <div className="h-10 w-10 bg-black"></div>
+          <div className="socials-wrapper mb-8 flex flex-wrap items-center justify-center gap-y-5 sm:mb-0 md:justify-start">
+            <a
+              href="https://open.spotify.com/intl-de/artist/5Z215UqxnldmCALHpIwvH8"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faSpotify}
+                size="2x"
+                className="text-black"
+              />
+            </a>
+
+            <a
+              href="https://www.youtube.com/channel/UCmM4SDtS5Ih1I05smpfGgIw"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faYoutube}
+                size="2x"
+                className="text-black"
+              />
+            </a>
+
+            <a href="https://www.instagram.com/hammerhai_1997/" target="_blank">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                size="2x"
+                className="text-black"
+              />
+            </a>
+
+            <a
+              href="https://music.apple.com/de/artist/hammerhai/303557549"
+              target="_blank"
+            >
+              <Image
+                src="/assets/images/Socials/black.svg"
+                alt="Apple Music logo"
+                height={32}
+                width={32}
+              />
+            </a>
+
+            <a
+              href="https://www.facebook.com/p/HAMMERHAI-100063787770324/"
+              target="_blank"
+            >
+              <FontAwesomeIcon
+                icon={faFacebook}
+                size="2x"
+                className="text-black"
+              />
+            </a>
+
+            <a href="https://hammerhai.bandcamp.com/" target="_blank">
+              <FontAwesomeIcon
+                icon={faBandcamp}
+                size="2x"
+                className="text-black"
+              />
+            </a>
+
+            <a href="https://www.deezer.com/de/artist/274430" target="_blank">
+              <FontAwesomeIcon
+                icon={faDeezer}
+                size="xl"
+                className="text-black"
+              />
+            </a>
+
+            <a
+              href="https://music.amazon.de/artists/B002S2X8WK/hammerhai?referrer=https://www.google.com/"
+              target="_blank"
+            >
+              <Image
+                src="/assets/images/Socials/Amazon_Music_Logo_Stacked_RGB_Entertainment_Dark_MASTER.png"
+                width={32}
+                height={32}
+                alt="Amazon Music logo"
+              />
+            </a>
           </div>
         </div>
       </div>

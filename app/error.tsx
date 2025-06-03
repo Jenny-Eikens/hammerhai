@@ -16,7 +16,7 @@ const Error = ({ error, reset }: ErrorProps) => {
     <div className="m-auto flex flex-col items-center justify-center space-y-4 text-center text-2xl">
       <p>Es tut uns leid, der Inhalt konnte nicht geladen werden.</p>
       <button
-        className="bg-white p-2 text-black transition-colors duration-200 hover:bg-black hover:text-white"
+        className="rounded-md bg-white p-2 text-black transition-colors duration-300 hover:cursor-pointer hover:bg-black hover:text-white"
         onClick={() => reset()}
       >
         Erneut versuchen

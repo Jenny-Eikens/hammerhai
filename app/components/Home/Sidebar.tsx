@@ -55,7 +55,7 @@ const Sidebar = () => {
         </a>
         <a href="https://hammerhai.bandcamp.com/" target="_blank">
           <Image
-            src="/assets/images/socials/bandcamp-button-circle-green-512.png"
+            src="/assets/images/socials/bandcamp-button-circle-green-256.png"
             alt="Bandcamp logo"
             width={40}
             height={40}

@@ -16,11 +16,8 @@ const Music = ({ music }: MusicProps) => {
         <div className="music-grid border-2 border-blue-500">
           {music.map((album) => (
             <>
-              <div
-                key={album.id}
-                className="space-y-2 border border-green-500 md:m-0"
-              >
-                <div className="relative max-w-[250px]">
+              <div key={album.id} className="space-y-2 border border-green-500">
+                <div className="relative max-w-[260px]">
                   <DatoImage data={album.productImage.responsiveImage} />
                   <div className="absolute bottom-1 left-1 flex h-[6rem] w-[6rem] flex-wrap items-center justify-center rounded-full bg-white p-2 text-center text-sm text-black">
                     {album.price}

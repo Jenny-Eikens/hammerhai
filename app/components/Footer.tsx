@@ -31,11 +31,17 @@ const Footer = () => {
               <Link
                 href="/datenschutz"
                 target="_blank"
-                className="text-xs md:text-sm"
+                className="block text-xs md:text-sm"
               >
                 Datenschutz
               </Link>
-              <div>Disclaimer</div>
+              <Link
+                href="/disclaimer"
+                target="_blank"
+                className="block text-xs md:text-sm"
+              >
+                Disclaimer
+              </Link>
             </div>
             <div className="footer-details">
               <h4>IMPRESSUM / WEBMASTER</h4>

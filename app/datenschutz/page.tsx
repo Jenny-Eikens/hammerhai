@@ -1,10 +1,14 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Datenschutz = () => {
   return (
     <>
-      <div className="copyright-wrapper m-auto w-full max-w-[1200px] space-y-6 border border-red-500 px-2 py-4">
+      <div className="copyright-wrapper m-auto w-full max-w-[1200px] space-y-6 px-2 py-4">
         <h1 className="text-center text-2xl font-bold">Datenschutzerklärung</h1>
+        <Link href="/" className="legal-link mb-8 block text-center">
+          Zurück zur Homepage
+        </Link>
         <p>
           Diese Datenschutzerklärung klärt Sie über die Art, den Umfang und
           Zweck der Verarbeitung von personenbezogenen Daten (nachfolgend kurz

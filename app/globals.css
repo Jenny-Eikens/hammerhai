@@ -120,14 +120,19 @@ form input:focus-visible {
 
 /*------------------------------------------------------------------------------------------------------*/
 
-.copyright-wrapper h2 {
+.copyright-wrapper h2,
+.disclaimer-wrapper h2 {
   @apply mb-2 text-lg font-semibold;
 }
 
-.copyright-wrapper a {
+.copyright-wrapper a,
+.disclaimer-wrapper a,
+.legal-link {
   @apply text-underline underline;
 }
 
-.copyright-wrapper a:visited {
+.copyright-wrapper a:visited,
+.disclaimer-wrapper a:visited,
+.legal-link:visited {
   @apply text-red-500;
 }

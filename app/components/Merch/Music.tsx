@@ -9,14 +9,14 @@ type MusicProps = {
 const Music = ({ music }: MusicProps) => {
   return (
     <>
-      <div className="border border-red-500">
+      <div>
         <div className="mb-8 text-left md:mb-10">
           <h2 className="bg-navbar inline p-2 shadow-md">CD / Vinyl / DVD</h2>
         </div>
-        <div className="music-grid border-2 border-blue-500">
+        <div className="music-grid">
           {music.map((album) => (
             <>
-              <div key={album.id} className="space-y-2 border border-green-500">
+              <div key={album.id} className="space-y-2">
                 <div className="relative max-w-[260px]">
                   <DatoImage data={album.productImage.responsiveImage} />
                   <div className="absolute bottom-1 left-1 flex h-[6rem] w-[6rem] flex-wrap items-center justify-center rounded-full bg-white p-2 text-center text-sm text-black">

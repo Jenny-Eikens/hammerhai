@@ -6,7 +6,7 @@ import { Bars4Icon } from '@heroicons/react/24/outline'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import type { ActiveSectionType } from '@/types/activesection'
 
-const Header = ({ activeSection, setActiveSection }: ActiveSectionType) => {
+const Header = ({ activeSection }: ActiveSectionType) => {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -43,12 +43,11 @@ const Header = ({ activeSection, setActiveSection }: ActiveSectionType) => {
           className={`bg-navbar fixed top-0 left-0 z-40 flex h-full w-[75%] max-w-[450px] flex-col overflow-y-auto pb-2 transition-transform duration-300 md:pb-0 ${menuOpen ? 'translate-x-0' : '-translate-x-full'} md:relative md:top-auto md:left-auto md:h-[70%] md:w-auto md:max-w-full md:translate-x-0 md:flex-row md:justify-end md:px-4`}
         >
           {/* column layout on small screens, row from medium-size */}
-          <ul className="mt-[8rem] list-none space-y-10 px-4 md:mt-0 md:flex md:flex-row md:flex-wrap md:items-center md:space-y-0 md:space-x-6 md:gap-y-3 md:px-0 md:py-4">
+          <ul className="mt-[8rem] list-none space-y-10 px-4 md:mt-0 md:flex md:flex-row md:flex-wrap md:items-center md:space-y-0 md:space-x-5 md:gap-y-3 md:px-0 md:py-4">
             {navItems.map((item, index) => (
               <li
                 key={index}
                 className={`hover:text-underline overflow-hidden bg-white shadow-lg transition-colors duration-200 md:flex md:w-auto md:min-w-0 md:flex-shrink md:items-center md:justify-center md:text-center ${activeSection === item.target && 'md:border-underline text-underline md:border-b-6 md:text-inherit'}`}
-                onClick={() => setActiveSection(item.target)}
               >
                 <a
                   className="focus-visible:text-underline block h-full w-full px-6 py-4"
@@ -67,7 +66,7 @@ const Header = ({ activeSection, setActiveSection }: ActiveSectionType) => {
 
 const navItems = [
   {
-    target: 'home',
+    target: 'hero',
     title: 'Start',
   },
   {

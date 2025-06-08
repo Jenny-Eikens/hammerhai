@@ -1,6 +1,7 @@
 - figure out how to stop border from shifting text upwards
 
-- make Disclaimer in footer into links
 - make Ticket component link to gig
 
 - Pressepaket organisieren
+
+H

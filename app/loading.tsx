@@ -6,7 +6,7 @@ const Loading = () => {
   return (
     <>
       <div className="m-auto flex flex-col items-center justify-center space-y-4 text-center text-2xl">
-        <FontAwesomeIcon icon={faSpinner} spinPulse size="2xl" />
+        <FontAwesomeIcon icon={faSpinner} spinPulse size="lg" />
         <div>Inhalt lädt...</div>
       </div>
     </>

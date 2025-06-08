@@ -2,7 +2,7 @@
 import Header from './Header'
 import Live from './Live/Live'
 import Merch from './Merch/Merch'
-import Sidebar from './Home/Sidebar'
+import Sidebar from './Hero/Sidebar'
 import { useRef, useState, useEffect } from 'react'
 import { useInView } from 'react-intersection-observer'
 import type { ConcertType } from '@/types/concert'
@@ -12,6 +12,7 @@ import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import Footer from './Footer'
 import Carousel from './About/ImageSlider'
 import Contact from './Contact'
+import Image from 'next/image'
 
 type HomeProps = {
   concerts: ConcertType[]
@@ -24,7 +25,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
   const [activeSection, setActiveSection] = useState<string>('')
   const [headerHeight, setHeaderHeight] = useState(0)
 
-  const { ref: homeRef, inView: homeInView } = useInView({ threshold: 0.6 })
+  const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.6 })
   const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
   const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.5 })
   const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.6 })
@@ -48,12 +49,12 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
   }, [])
 
   useEffect(() => {
-    if (homeInView) setActiveSection('home')
+    if (heroInView) setActiveSection('hero')
     else if (liveInView) setActiveSection('live')
     else if (merchInView) setActiveSection('merch')
     else if (aboutInView) setActiveSection('about')
     else if (contactInView) setActiveSection('contact')
-  }, [homeInView, liveInView, merchInView, aboutInView, contactInView])
+  }, [heroInView, liveInView, merchInView, aboutInView, contactInView])
 
   return (
     <>
@@ -75,8 +76,8 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
         <main id="main-content">
           {/* MAIN CONTENT */}
           <section
-            ref={homeRef}
-            id="home"
+            ref={heroRef}
+            id="hero"
             aria-label="Startseite"
             className="relative flex flex-col bg-white"
             style={{
@@ -84,16 +85,41 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               scrollMarginTop: `${headerHeight}px`,
             }}
           >
-            <Sidebar />
+            <div className="hero-wrapper flex h-full w-full items-center justify-center">
+              <div
+                className="relative h-[95%] w-[95%] md:hidden"
+                id="hero-image-mobile"
+              >
+                <Image
+                  src="/assets/images/hero/mobile-cover.jpeg"
+                  alt="Gruppenbild der Bandmitglieder, die im Waschsalon stehen"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+
+              <div
+                className="relative hidden h-[85%] w-[95%] md:block"
+                id="hero-image-desktop"
+              >
+                <Image
+                  src="/assets/images/hero/desktop-cover.jpeg"
+                  alt="Bild der Bandmitglieder, die in einem Park auf einer Mauer sitzen"
+                  className="object-cover object-[25%_35%]"
+                  fill
+                />
+              </div>
+            </div>
             <a
               href="#live"
               role="button"
               id="next-section"
               aria-label="Zu nächstem Abschnitt"
-              className="mx-auto mt-auto mb-4 hidden h-[4rem] w-[4rem] items-center justify-center rounded-full bg-white p-2 shadow-xl transition-all ease-out hover:scale-[1.2] hover:cursor-pointer md:flex"
+              className="absolute bottom-5 left-1/2 mx-auto mt-auto flex h-[3.5rem] w-[3.5rem] -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 shadow-xl transition-all ease-out hover:scale-[1.2] hover:cursor-pointer md:hidden md:h-[4rem] md:w-[4rem]"
             >
               <ArrowDownIcon className="text-underline h-10 w-10" />
             </a>
+            <Sidebar />
           </section>
           <section
             ref={liveRef}

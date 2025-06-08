@@ -1,6 +1,7 @@
 'use client'
 import React from 'react'
 import { useEffect } from 'react'
+import { ExclamationCircleIcon } from '@heroicons/react/24/outline'
 
 type ErrorProps = {
   error: Error
@@ -13,10 +14,11 @@ const Error = ({ error, reset }: ErrorProps) => {
   }, [error])
 
   return (
-    <div className="m-auto flex flex-col items-center justify-center space-y-4 text-center text-2xl">
+    <div className="m-auto flex h-screen w-screen flex-col items-center justify-center space-y-4 text-center text-2xl">
+      <ExclamationCircleIcon className="size-16" />
       <p>Es tut uns leid, der Inhalt konnte nicht geladen werden.</p>
       <button
-        className="rounded-md bg-white p-2 text-black transition-colors duration-300 hover:cursor-pointer hover:bg-black hover:text-white"
+        className="text-black underline hover:cursor-pointer"
         onClick={() => reset()}
       >
         Erneut versuchen

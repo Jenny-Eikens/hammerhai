@@ -26,7 +26,7 @@ const HOMEPAGE_QUERY = `query MyQuery {
       }
     }
   }
-    allMusicArticles {
+    allMusicArticles (orderBy: year_ASC) {
     id
     price 
     title

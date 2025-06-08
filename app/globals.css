@@ -140,3 +140,19 @@ form input:focus-visible {
 .legal-link:visited {
   @apply text-red-500;
 }
+
+@media (max-width: 767px) and (orientation: landscape) {
+  #hero-image-mobile {
+    display: none;
+  }
+  #hero-image-desktop {
+    display: block;
+  }
+  #sidebar {
+    display: none;
+  }
+  #next-section {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}

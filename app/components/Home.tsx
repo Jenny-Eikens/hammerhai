@@ -10,7 +10,6 @@ import type { MusicType } from '@/types/music'
 import type { ClothingType } from '@/types/clothes'
 import { ArrowDownIcon } from '@heroicons/react/24/outline'
 import Footer from './Footer'
-import Carousel from './About/ImageSlider'
 import Contact from './Contact'
 import Image from 'next/image'
 import About from './About/About'
@@ -150,7 +149,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             ref={aboutRef}
             id="about"
             aria-label="Über uns"
-            className="bg-section-gray min-h-max"
+            className="bg-section-gray min-h-max overflow-hidden"
             style={{
               minHeight: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
@@ -169,10 +168,6 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             }}
           >
             <Contact />
-          </section>
-
-          <section>
-            <Carousel />
           </section>
         </main>
         <footer aria-label="Footer" id="footer" className="bg-section-gray">

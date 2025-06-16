@@ -1,23 +1,11 @@
 import React from 'react'
 import Carousel from './ImageSlider'
 
-// const image1 = '/images/about/IMG_4274.jpg'
-// const image2 = '/images/about/IMG_20220916_230401.jpg'
-// const image3 = '/images/about/IMG_20221112_190412.jpg'
-// const image4 = '/images/about/IMG_20221231_163343_975.jpg'
-// const image5 = '/images/about/IMG_20231231_010747.jpg'
-// const image6 = '/images/about/IMG_20240216_195428_edit_398682507131872.jpg'
-// const image7 = '/images/about/IMG_20240405_155752.jpg'
-// const image8 = '/images/about/IMG_20240802_194833.jpg'
-// const image9 = '/images/about/OA Friedewalde.jpg'
-// const image10 = '/images/about/OA Hamburg 1.jpg'
-// const image11 = '/images/about/VEB 2.jpg'
-
 const About = () => {
   return (
     <>
-      <div className="border border-green-500 md:flex">
-        <p className="w-full p-4 pt-8 md:w-[50%] md:text-lg">
+      <div className="md:flex md:flex-col md:items-center md:gap-10 md:p-10">
+        <p className="p-4 pt-8 md:max-w-[800px] md:p-0 md:text-xl">
           HAMMERHAI... die Hohepriester des deutschsprachigen Offbeat-Gewitters
           und bekennende Freibeuter der Stile. Im Gepäck haben sie jede Menge
           unverschämt eingängige Songs und jede Menge Feuer im Hintern.
@@ -27,12 +15,13 @@ const About = () => {
           Spielfreude und geschmeidiges Songwriting sind die Hauptmerkmale einer
           Band, die sich keinen Pfifferling um irgendwelche Trends schert.
         </p>
-        <div className="image-grid hidden max-w-[700px] gap-2 border border-red-500 md:grid">
+        <div className="image-grid hidden md:grid md:max-w-[800px] md:gap-2">
           <img
             src="/images/about/IMG_20220916_230401.jpg"
             alt="Bandfoto 2"
             className="grid-image"
             id="image-2"
+            loading="lazy"
           />
           <img
             src="/images/about/IMG_20221112_190412.jpg"

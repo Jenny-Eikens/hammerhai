@@ -17,7 +17,7 @@ const Sidebar = () => {
           target="_blank"
         >
           <Image
-            src="/assets/images/socials/youtube_social_icon_red.png"
+            src="/images/socials/youtube_social_icon_red.png"
             alt="YouTube logo"
             width={40}
             height={40}
@@ -28,7 +28,7 @@ const Sidebar = () => {
           target="_blank"
         >
           <Image
-            src="/assets/images/socials/Spotify_Primary_Logo_RGB_Green.png"
+            src="/images/socials/Spotify_Primary_Logo_RGB_Green.png"
             alt="Spotify logo"
             width={40}
             height={40}
@@ -36,7 +36,7 @@ const Sidebar = () => {
         </a>
         <a href="https://www.instagram.com/hammerhai_1997/" target="_blank">
           <Image
-            src="/assets/images/Socials/Instagram_Glyph_Gradient.png"
+            src="/images/Socials/Instagram_Glyph_Gradient.png"
             alt="Instagram logo"
             width={40}
             height={40}
@@ -47,7 +47,7 @@ const Sidebar = () => {
           target="_blank"
         >
           <Image
-            src="/assets/images/socials/Facebook_Logo_Primary.png"
+            src="/images/socials/Facebook_Logo_Primary.png"
             alt="Facebook logo"
             width={40}
             height={40}
@@ -55,7 +55,7 @@ const Sidebar = () => {
         </a>
         <a href="https://hammerhai.bandcamp.com/" target="_blank">
           <Image
-            src="/assets/images/socials/bandcamp-button-circle-green-256.png"
+            src="/images/socials/bandcamp-button-circle-green-256.png"
             alt="Bandcamp logo"
             width={40}
             height={40}

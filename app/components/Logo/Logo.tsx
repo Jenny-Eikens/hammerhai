@@ -8,7 +8,7 @@ const Logo = () => {
         aria-label="Band logo"
       >
         <img
-          src="assets/images/Hammerhai-Logo-Neu.gif"
+          src="/images/Hammerhai-Logo-Neu.gif"
           alt="Band logo"
           className="mb-2 min-w-[200px]"
         />

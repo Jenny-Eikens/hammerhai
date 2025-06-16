@@ -2,6 +2,6 @@
 
 - make Ticket component link to gig
 
-- Pressepaket organisieren
+- add favicon
 
-H
+

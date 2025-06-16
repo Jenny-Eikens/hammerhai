@@ -13,6 +13,7 @@ import Footer from './Footer'
 import Carousel from './About/ImageSlider'
 import Contact from './Contact'
 import Image from 'next/image'
+import About from './About/About'
 
 type HomeProps = {
   concerts: ConcertType[]
@@ -27,7 +28,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
 
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.6 })
   const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
-  const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.5 })
+  const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.3 })
   const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.6 })
   const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 0.6,
@@ -91,7 +92,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
                 id="hero-image-mobile"
               >
                 <Image
-                  src="/assets/images/hero/mobile-cover.jpeg"
+                  src="/images/hero/mobile-cover.jpeg"
                   alt="Gruppenbild der Bandmitglieder, die im Waschsalon stehen"
                   fill
                   className="object-cover"
@@ -103,7 +104,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
                 id="hero-image-desktop"
               >
                 <Image
-                  src="/assets/images/hero/desktop-cover.jpeg"
+                  src="/images/hero/desktop-cover.jpeg"
                   alt="Bild der Bandmitglieder, die in einem Park auf einer Mauer sitzen"
                   className="object-cover object-[25%_35%]"
                   fill
@@ -154,7 +155,9 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               minHeight: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `${headerHeight}px`,
             }}
-          ></section>
+          >
+            <About />
+          </section>
           <section
             ref={contactRef}
             id="contact"

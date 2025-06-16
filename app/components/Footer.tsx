@@ -33,7 +33,14 @@ const Footer = () => {
             <div className="footer-details">
               <h4>PRESSE</h4>
               <div>
-                Presse-Paket: <span className="underline">Download</span>
+                Presse-Paket:{' '}
+                <a
+                  href="/downloads/HAMMERHAI_Presse-Paket.zip"
+                  download
+                  className="underline"
+                >
+                  Download
+                </a>
               </div>
             </div>
             <div className="footer-details">
@@ -105,7 +112,7 @@ const Footer = () => {
               target="_blank"
             >
               <Image
-                src="/assets/images/Socials/black.svg"
+                src="/images/Socials/black.svg"
                 alt="Apple Music logo"
                 height={32}
                 width={32}
@@ -144,7 +151,7 @@ const Footer = () => {
               target="_blank"
             >
               <Image
-                src="/assets/images/Socials/Amazon_Music_Logo_Stacked_RGB_Entertainment_Dark_MASTER.png"
+                src="/images/Socials/Amazon_Music_Logo_Stacked_RGB_Entertainment_Dark_MASTER.png"
                 width={32}
                 height={32}
                 alt="Amazon Music logo"

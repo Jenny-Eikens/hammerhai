@@ -52,6 +52,7 @@ const Header = ({ activeSection }: ActiveSectionType) => {
                 <a
                   className="focus-visible:text-underline block h-full w-full px-6 py-4"
                   href={`#${item.target}`}
+                  onClick={() => setMenuOpen(false)}
                 >
                   {item.title}
                 </a>

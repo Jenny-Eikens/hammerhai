@@ -1,26 +1,26 @@
-import "./globals.css";
+import './globals.css'
 
 export const metadata = {
-  title: "Hammerhai",
+  title: 'Hammerhai',
   icons: {
-    icon: "/favicon-32x32.png",
+    icon: '/favicon.ico',
   },
-  description: "Official website of Hammerhai",
-};
+  description: 'Official website of Hammerhai band',
+}
 
 export const viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
-};
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en">
       <body>{children}</body>
     </html>
-  );
+  )
 }

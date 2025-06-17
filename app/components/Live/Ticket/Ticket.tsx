@@ -53,9 +53,11 @@ const Ticket = ({
               <span className="text-xs">Ticket-Nr.</span>
               <span className="text-xs">0123456789</span>
             </div>
-            <span className="block text-sm font-semibold">
-              Einlass {doors} Uhr
-            </span>
+            {doors && (
+              <span className="block text-sm font-semibold">
+                Einlass {doors} Uhr
+              </span>
+            )}
           </div>
         </div>
       </div>

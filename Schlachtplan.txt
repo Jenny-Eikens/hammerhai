@@ -1,7 +1,5 @@
 - figure out how to stop border from shifting text upwards
 
-- make Ticket component link to gig
-
-- add favicon
+- figure out what's wrong with scrolling to about section (doesn't scroll to top)
 
 

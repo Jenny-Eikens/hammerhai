@@ -4,7 +4,7 @@ export type ConcertType = {
   id: string
   address: string
   date: string
-  doors: string
+  doors?: string
   price: number
   time: string
   venueImage: {

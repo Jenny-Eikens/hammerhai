@@ -28,7 +28,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.6 })
   const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
   const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.3 })
-  const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.6 })
+  const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.2 })
   const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 0.6,
   })
@@ -115,9 +115,9 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               role="button"
               id="next-section"
               aria-label="Zu nächstem Abschnitt"
-              className="absolute bottom-5 left-1/2 mx-auto mt-auto flex h-[3.5rem] w-[3.5rem] -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 shadow-xl transition-all ease-out hover:scale-[1.2] hover:cursor-pointer md:hidden md:h-[4rem] md:w-[4rem]"
+              className="absolute bottom-5 left-1/2 mx-auto mt-auto flex h-[3rem] w-[3rem] -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 shadow-xl md:hidden"
             >
-              <ArrowDownIcon className="text-underline h-10 w-10" />
+              <ArrowDownIcon className="text-underline h-8 w-8" />
             </a>
             <Sidebar />
           </section>

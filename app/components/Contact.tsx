@@ -43,11 +43,16 @@ const Contact = () => {
   })
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    const response = await fetch('https://formspree.io/f/FORMSPREE_KEY', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data),
-    })
+    const response = await fetch(
+      `https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_KEY}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      },
+    )
+
+    console.log('Response:', response)
 
     if (response.ok) {
       reset()
@@ -343,7 +348,6 @@ const Contact = () => {
             </div>
 
             <button
-              onClick={handleOpenModal}
               type="submit"
               className="text-underline group flex items-center justify-center space-x-2 rounded-md bg-white/85 p-2 transition-colors hover:cursor-pointer hover:bg-white"
             >

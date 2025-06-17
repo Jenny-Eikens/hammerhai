@@ -4,8 +4,11 @@ import Carousel from './ImageSlider'
 const About = () => {
   return (
     <>
-      <div className="md:flex md:flex-col md:items-center md:gap-10 md:p-10">
-        <p className="p-4 pt-8 md:max-w-[800px] md:p-0 md:text-xl">
+      <div className="mx-auto md:flex md:max-w-[900px] md:flex-col md:items-center md:gap-10 md:p-10">
+        <h1 className="px-4 pt-8 text-center text-xl underline md:p-0 md:text-3xl">
+          Wer wird sind
+        </h1>
+        <p className="p-4 pt-4 md:p-0 md:text-xl">
           HAMMERHAI... die Hohepriester des deutschsprachigen Offbeat-Gewitters
           und bekennende Freibeuter der Stile. Im Gepäck haben sie jede Menge
           unverschämt eingängige Songs und jede Menge Feuer im Hintern.

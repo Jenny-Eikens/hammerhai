@@ -10,10 +10,10 @@ const Clothing = ({ clothing }: ClothingProps) => {
   return (
     <>
       <div>
-        <div className="mb-8 text-left md:mb-10">
+        <div className="mb-8 text-center sm:text-left md:mb-10">
           <h2 className="bg-navbar inline p-2 shadow-md">Textilien</h2>
         </div>
-        <div className="clothing-grid">
+        <div className="clothing-grid flex flex-col items-center sm:grid">
           {clothing.map((clothingArticle) => (
             <>
               <div key={clothingArticle.id} className="space-y-2">

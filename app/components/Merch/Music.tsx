@@ -10,16 +10,16 @@ const Music = ({ music }: MusicProps) => {
   return (
     <>
       <div>
-        <div className="mb-8 text-left md:mb-10">
+        <div className="mb-8 text-center sm:text-left md:mb-10">
           <h2 className="bg-navbar inline p-2 shadow-md">CD / Vinyl / DVD</h2>
         </div>
-        <div className="music-grid">
+        <div className="music-grid flex flex-col items-center sm:grid sm:items-start">
           {music.map((album) => (
             <>
-              <div key={album.id} className="space-y-2">
-                <div className="relative max-w-[260px]">
+              <div key={album.id} className="max-w-[260px] space-y-2">
+                <div className="relative aspect-square overflow-hidden">
                   <DatoImage data={album.productImage.responsiveImage} />
-                  <div className="absolute bottom-1 left-1 flex h-[6rem] w-[6rem] flex-wrap items-center justify-center rounded-full bg-white p-2 text-center text-sm text-black">
+                  <div className="absolute bottom-1 left-1 flex h-[6.2rem] w-[6.2rem] flex-wrap items-center justify-center rounded-full bg-white p-[8px] text-center text-sm text-black">
                     {album.price}
                   </div>
                 </div>

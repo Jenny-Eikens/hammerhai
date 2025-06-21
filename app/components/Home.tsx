@@ -137,7 +137,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             ref={merchRef}
             id="merch"
             aria-label="Merch"
-            className="min-h-max bg-white px-2 md:px-8"
+            className="min-h-max bg-white px-2 md:px-6"
             style={{
               minHeight: `calc(100vh - ${headerHeight}px)`,
               scrollMarginTop: `calc(${headerHeight - 1}px )`,

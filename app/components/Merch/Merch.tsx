@@ -12,9 +12,9 @@ type MerchProps = {
 const Merch = ({ music, clothing }: MerchProps) => {
   return (
     <>
-      <div className="space-y-5 px-2 py-[3rem] text-center text-lg md:px-[5rem]">
+      <div className="space-y-5 px-2 py-[3rem] text-center text-lg sm:px-[2rem] md:px-[5rem]">
         <div className="mb-[6rem] space-y-5">
-          <h1 className="text-4xl">Mailorder</h1>
+          <h1 className="text-3xl">Mailorder</h1>
           <p>
             Und so wird&apos;s gemacht: Schreibt einfach eine Mail an{' '}
             <a

@@ -1,5 +1,6 @@
-- figure out how to stop border from shifting text upwards
-
 - figure out what's wrong with scrolling to about section (doesn't scroll to top)
 
+- update links in Readme
+
+- "Mein Kiez" album cover missing
 

@@ -112,7 +112,7 @@ const Footer = () => {
               target="_blank"
             >
               <Image
-                src="/images/Socials/black.svg"
+                src="/images/socials/black.svg"
                 alt="Apple Music logo"
                 height={32}
                 width={32}
@@ -151,7 +151,7 @@ const Footer = () => {
               target="_blank"
             >
               <Image
-                src="/images/Socials/Amazon_Music_Logo_Stacked_RGB_Entertainment_Dark_MASTER.png"
+                src="/images/socials/Amazon_Music_Logo_Stacked_RGB_Entertainment_Dark_MASTER.png"
                 width={32}
                 height={32}
                 alt="Amazon Music logo"

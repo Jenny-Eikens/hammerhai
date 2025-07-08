@@ -36,7 +36,7 @@ const Sidebar = () => {
         </a>
         <a href="https://www.instagram.com/hammerhai_1997/" target="_blank">
           <Image
-            src="/images/Socials/Instagram_Glyph_Gradient.png"
+            src="/images/socials/Instagram_Glyph_Gradient.png"
             alt="Instagram logo"
             width={40}
             height={40}

@@ -6,7 +6,7 @@ const About = () => {
     <>
       <div className="mx-auto md:flex md:max-w-[900px] md:flex-col md:items-center md:gap-10 md:p-10">
         <h1 className="px-4 pt-8 text-center text-xl underline md:p-0 md:text-3xl">
-          Wer wird sind
+          Das ist Hammerhai
         </h1>
         <p className="p-4 pt-4 md:p-0 md:text-xl">
           HAMMERHAI... die Hohepriester des deutschsprachigen Offbeat-Gewitters

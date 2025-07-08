@@ -65,7 +65,8 @@ body {
 
 .music-grid,
 .clothing-grid {
-  gap: 2rem;
+  row-gap: 3rem;
+  column-gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
 }
 

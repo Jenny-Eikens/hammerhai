@@ -2,6 +2,8 @@ import React from 'react'
 import { performRequest } from '../lib/datocms'
 import Home from './components/Home'
 
+export const revalidate = 60
+
 const HOMEPAGE_QUERY = `query MyQuery {
   allConcerts {
     id
@@ -76,9 +78,7 @@ const HOMEPAGE_QUERY = `query MyQuery {
 
 const Page = async () => {
   try {
-    const res = await performRequest(HOMEPAGE_QUERY, {
-      next: { revalidate: 60 },
-    })
+    const res = await performRequest(HOMEPAGE_QUERY)
 
     const concerts = res.allConcerts || []
     const music = res.allMusicArticles || []

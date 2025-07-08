@@ -30,7 +30,7 @@
     "tailwind.config.mjs",
     "tailwind.config.js",
     "postcss.config.js",
-    "lib/datocms.js"
+    "lib/datocms.ts"
   ],
   "exclude": ["node_modules"]
 }

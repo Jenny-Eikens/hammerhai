@@ -72,7 +72,7 @@ const Contact = () => {
         <form
           noValidate
           className="bg-underline m-auto w-[95vw] max-w-[800px] space-y-2 rounded-md p-8 text-white"
-          action="https://formspree.io/f/movdgpok"
+          action={`https://formspree.io/f/${process.env.NEXT_PUBLIC_FORMSPREE_KEY}`}
           onSubmit={handleSubmit(onSubmit)}
           method="POST"
         >

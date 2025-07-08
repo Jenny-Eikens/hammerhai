@@ -55,10 +55,10 @@ const Footer = () => {
             <div className="footer-details">
               <h4>IMPRESSUM / WEBMASTER</h4>
               <address className="not-italic">
-                <div>Jens Berkmann</div>
-                <div>Spichernstr.15</div>
-                <div>42103 Wuppertal</div>
-                <a href="mailto:jb@hammerhai.net">jb@hammerhai.net</a>
+                <div>Hagen Balke</div>
+                <div>Ulmenstr. 4</div>
+                <div>26725 Emden</div>
+                <a href="mailto:jb@hammerhai.net">h_balke@gmx.de</a>
               </address>
             </div>
           </div>

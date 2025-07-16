@@ -9,10 +9,15 @@ type ConcertProps = {
 const Live = ({ concerts }: ConcertProps) => {
   if (concerts.length === 0) {
     return (
-      <p className="text-center text-2xl">
-        &#128546; Hier gibt es im Moment nichts zu sehen. Schau gerne zu einem
-        späteren Zeitpunkt noch mal vorbei!
-      </p>
+      <>
+        <div className="space-y-4 text-center">
+          <h1 className="text-3xl underline">Live-Termine</h1>
+          <p className="text-2xl">
+            &#128546; Hier gibt es im Moment nichts zu sehen. Schau gerne zu
+            einem späteren Zeitpunkt noch mal vorbei!
+          </p>
+        </div>
+      </>
     )
   }
   return (

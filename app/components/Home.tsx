@@ -24,6 +24,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
   const headerRef = useRef<HTMLElement | null>(null)
   const [activeSection, setActiveSection] = useState<string>('')
   const [headerHeight, setHeaderHeight] = useState(0)
+  const [viewportHeight, setViewportHeight] = useState(0)
 
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.6 })
   const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
@@ -34,17 +35,25 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
   })
 
   useEffect(() => {
-    const updateHeaderHeight = () => {
+    const updateHeights = () => {
+      if (typeof window !== 'undefined') {
+        setViewportHeight(window.visualViewport?.height || window.innerHeight)
+      }
+
       if (headerRef.current) {
         setHeaderHeight(headerRef.current.offsetHeight)
       }
     }
 
-    updateHeaderHeight()
+    updateHeights()
 
-    if (!window === undefined) {
-      window.addEventListener('resize', updateHeaderHeight)
-      return () => window.removeEventListener('resize', updateHeaderHeight)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updateHeights)
+      window.addEventListener('scroll', updateHeights)
+      return () => {
+        window.removeEventListener('resize', updateHeights)
+        window.removeEventListener('scroll', updateHeights)
+      }
     }
   }, [])
 
@@ -81,7 +90,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             aria-label="Startseite"
             className="relative flex flex-col bg-white"
             style={{
-              height: `calc(100vh - ${headerHeight}px)`,
+              height: `${viewportHeight - headerHeight}px`,
               scrollMarginTop: `${headerHeight}px`,
             }}
           >

@@ -15,10 +15,9 @@ export function useResponsiveLayout() {
       setHasResolvedLayout(true)
     }
 
-    // Delay layout check until browser settles
     const delay = setTimeout(() => {
       checkLayout()
-    }, 100) // 100ms is usually enough; you can tweak this
+    }, 100)
 
     window.addEventListener('resize', checkLayout)
     window.addEventListener('orientationchange', checkLayout)

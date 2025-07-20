@@ -26,7 +26,8 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
   const [activeSection, setActiveSection] = useState<string>('')
   const [headerHeight, setHeaderHeight] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(0)
-  const { isMobile, isMobileLandscape } = useResponsiveLayout()
+  const { isMobile, isMobileLandscape, hasResolvedLayout } =
+    useResponsiveLayout()
 
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.6 })
   const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
@@ -67,6 +68,8 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
     else if (contactInView) setActiveSection('contact')
   }, [heroInView, liveInView, merchInView, aboutInView, contactInView])
 
+  if (!hasResolvedLayout) return null
+
   return (
     <>
       <a href="#main-content" className="skip-link">
@@ -97,29 +100,31 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             }}
           >
             <div className="hero-wrapper flex h-full w-full items-center justify-center">
-              <div
-                className={`relative h-[95%] w-[95%] md:hidden ${isMobileLandscape && 'hidden'}`}
-                id="hero-image-mobile"
-              >
-                <Image
-                  src="/images/hero/mobile-cover.jpeg"
-                  alt="Gruppenbild der Bandmitglieder, die im Waschsalon stehen"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-
-              <div
-                className={`relative hidden h-[85%] w-[95%] md:block ${isMobileLandscape && 'block'}`}
-                id="hero-image-desktop"
-              >
-                <Image
-                  src="/images/hero/desktop-cover.jpeg"
-                  alt="Bild der Bandmitglieder, die in einem Park auf einer Mauer sitzen"
-                  className="object-cover object-[25%_35%]"
-                  fill
-                />
-              </div>
+              {isMobile && !isMobileLandscape ? (
+                <div
+                  className={`relative h-[95%] w-[95%] md:hidden`}
+                  id="hero-image-mobile"
+                >
+                  <Image
+                    src="/images/hero/mobile-cover.jpeg"
+                    alt="Gruppenbild der Bandmitglieder, die im Waschsalon stehen"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              ) : (
+                <div
+                  className={`relative h-[85%] w-[95%]`}
+                  id="hero-image-desktop"
+                >
+                  <Image
+                    src="/images/hero/desktop-cover.jpeg"
+                    alt="Bild der Bandmitglieder, die in einem Park auf einer Mauer sitzen"
+                    className="object-cover object-[25%_35%]"
+                    fill
+                  />
+                </div>
+              )}
             </div>
             <a
               href="#live"
@@ -130,7 +135,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             >
               <ArrowDownIcon className="text-underline h-8 w-8" />
             </a>
-            {!isMobile && !isMobileLandscape && <Sidebar />}
+            <Sidebar />
           </section>
           <section
             ref={liveRef}
@@ -142,6 +147,9 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               scrollMarginTop: `${headerHeight}px`,
             }}
           >
+            {(isMobile || isMobileLandscape) && (
+              <div>MOBILE OR MOBILE LANDSCAPE DETECTED</div>
+            )}
             <Live concerts={concerts} />
           </section>
           <section

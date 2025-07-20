@@ -203,7 +203,7 @@ form input:focus-visible {
 }
 
 @media (orientation: landscape) and (max-height: 500px) {
-  #hero-image-mobile {
+  /* #hero-image-mobile {
     display: hidden;
   }
   #hero-image-desktop {
@@ -211,9 +211,9 @@ form input:focus-visible {
   }
   #sidebar {
     display: hidden;
-  }
-  #next-section {
+  } */
+  /* #next-section {
     height: 2.5rem;
     width: 2.5rem;
-  }
+  } */
 }

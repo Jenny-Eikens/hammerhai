@@ -147,9 +147,9 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               scrollMarginTop: `${headerHeight}px`,
             }}
           >
-            {(isMobile || isMobileLandscape) && (
+            {/* {(isMobile || isMobileLandscape) && (
               <div>MOBILE OR MOBILE LANDSCAPE DETECTED</div>
-            )}
+            )} */}
             <Live concerts={concerts} />
           </section>
           <section

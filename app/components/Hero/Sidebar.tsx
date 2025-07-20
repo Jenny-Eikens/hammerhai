@@ -6,7 +6,7 @@ const Sidebar = () => {
   const { isMobile, isMobileLandscape } = useResponsiveLayout()
   return (
     <>
-      {!(isMobile || isMobileLandscape) && ( // don't render on mobile screens
+      {!(isMobile || isMobileLandscape) && (
         <div
           id="sidebar"
           aria-label="Links zu sozialen Netzwerken"

@@ -1,4 +1,4 @@
 export type ActiveSectionType = {
   activeSection: string
-  setActiveSection: (section: string) => void
+  setActiveSection?: (section: string) => void
 }

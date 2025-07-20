@@ -1,5 +1,5 @@
 'use client'
-import Header from './Header'
+import Header from './Headers/Header'
 import Live from './Live/Live'
 import Merch from './Merch/Merch'
 import Sidebar from './Hero/Sidebar'
@@ -13,6 +13,7 @@ import Footer from './Footer'
 import Contact from './Contact'
 import Image from 'next/image'
 import About from './About/About'
+import { useResponsiveLayout } from '../hooks/useResponsiveLayout'
 
 type HomeProps = {
   concerts: ConcertType[]
@@ -25,10 +26,11 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
   const [activeSection, setActiveSection] = useState<string>('')
   const [headerHeight, setHeaderHeight] = useState(0)
   const [viewportHeight, setViewportHeight] = useState(0)
+  const { isMobile, isMobileLandscape } = useResponsiveLayout()
 
   const { ref: heroRef, inView: heroInView } = useInView({ threshold: 0.6 })
   const { ref: liveRef, inView: liveInView } = useInView({ threshold: 0.6 })
-  const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.3 })
+  const { ref: merchRef, inView: merchInView } = useInView({ threshold: 0.1 })
   const { ref: aboutRef, inView: aboutInView } = useInView({ threshold: 0.2 })
   const { ref: contactRef, inView: contactInView } = useInView({
     threshold: 0.6,
@@ -96,7 +98,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
           >
             <div className="hero-wrapper flex h-full w-full items-center justify-center">
               <div
-                className="relative h-[95%] w-[95%] md:hidden"
+                className={`relative h-[95%] w-[95%] md:hidden ${isMobileLandscape && 'hidden'}`}
                 id="hero-image-mobile"
               >
                 <Image
@@ -108,7 +110,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               </div>
 
               <div
-                className="relative hidden h-[85%] w-[95%] md:block"
+                className={`relative hidden h-[85%] w-[95%] md:block ${isMobileLandscape && 'block'}`}
                 id="hero-image-desktop"
               >
                 <Image
@@ -128,7 +130,7 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
             >
               <ArrowDownIcon className="text-underline h-8 w-8" />
             </a>
-            <Sidebar />
+            {!isMobile && !isMobileLandscape && <Sidebar />}
           </section>
           <section
             ref={liveRef}

@@ -202,15 +202,15 @@ form input:focus-visible {
   @apply text-red-500;
 }
 
-@media (max-width: 767px) and (orientation: landscape) {
+@media (orientation: landscape) and (max-height: 500px) {
   #hero-image-mobile {
-    display: none;
+    display: hidden;
   }
   #hero-image-desktop {
     display: block;
   }
   #sidebar {
-    display: none;
+    display: hidden;
   }
   #next-section {
     height: 2.5rem;

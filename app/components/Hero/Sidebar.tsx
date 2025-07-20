@@ -7,7 +7,7 @@ const Sidebar = () => {
       <div
         id="sidebar"
         aria-label="Links zu sozialen Netzwerken"
-        className="bg-navbar absolute top-1/2 left-0 hidden w-max -translate-y-1/2 space-y-10 p-4 shadow-md sm:flex sm:flex-col"
+        className="bg-navbar absolute top-1/2 left-0 w-max -translate-y-1/2 space-y-10 p-4 shadow-md md:flex md:flex-col"
       >
         <a href="#next-section" className="skip-link">
           Soziale Netzwerke überspringen

@@ -35,36 +35,6 @@ const Live = ({ concerts }: ConcertProps) => {
               price={concert.price}
               doors={concert.doors}
             />
-            {/* <Ticket
-              id={concert.id}
-              key={concert.id}
-              venueImage={concert.venueImage}
-              address={concert.address}
-              date={concert.date}
-              time={concert.time}
-              price={concert.price}
-              doors={concert.doors}
-            />
-            <Ticket
-              id={concert.id}
-              key={concert.id}
-              venueImage={concert.venueImage}
-              address={concert.address}
-              date={concert.date}
-              time={concert.time}
-              price={concert.price}
-              doors={concert.doors}
-            />
-            <Ticket
-              id={concert.id}
-              key={concert.id}
-              venueImage={concert.venueImage}
-              address={concert.address}
-              date={concert.date}
-              time={concert.time}
-              price={concert.price}
-              doors={concert.doors}
-            /> */}
           </>
         ))}
       </div>

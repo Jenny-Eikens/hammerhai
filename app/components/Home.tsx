@@ -126,15 +126,18 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
                 </div>
               )}
             </div>
-            <a
-              href="#live"
-              role="button"
-              id="next-section"
-              aria-label="Zu nächstem Abschnitt"
-              className="absolute bottom-5 left-1/2 mx-auto mt-auto flex h-[3rem] w-[3rem] -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 shadow-xl md:hidden"
-            >
-              <ArrowDownIcon className="text-underline h-8 w-8" />
-            </a>
+            {isMobile && !isMobileLandscape && (
+              <a
+                href="#live"
+                role="button"
+                id="next-section"
+                aria-label="Zu nächstem Abschnitt"
+                className="absolute bottom-5 left-1/2 mx-auto mt-auto flex h-[3rem] w-[3rem] -translate-x-1/2 items-center justify-center rounded-full bg-white p-2 shadow-xl md:hidden"
+              >
+                <ArrowDownIcon className="text-underline h-8 w-8" />
+              </a>
+            )}
+
             <Sidebar />
           </section>
           <section
@@ -147,9 +150,6 @@ const Home = ({ concerts, music, clothing }: HomeProps) => {
               scrollMarginTop: `${headerHeight}px`,
             }}
           >
-            {/* {(isMobile || isMobileLandscape) && (
-              <div>MOBILE OR MOBILE LANDSCAPE DETECTED</div>
-            )} */}
             <Live concerts={concerts} />
           </section>
           <section

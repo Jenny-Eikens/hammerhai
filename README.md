@@ -22,7 +22,7 @@ This is the official website of the ska-punk band Hammerhai from Hanover, German
 ### Links
 
 - Repository URL: [Github repository](https://github.com/Jenny-Eikens/hammerhai)
-- Live Site URL: [Live site]() -> ADD!!!
+- Live Site URL: [Live site](https://www.hammerhai.net/)
 
 ### Screenshot
 

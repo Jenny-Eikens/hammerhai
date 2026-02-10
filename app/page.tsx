@@ -13,7 +13,7 @@ const HOMEPAGE_QUERY = `query MyQuery {
     price
     time
     venueImage {
-      responsiveImage(imgixParams: {fit: crop, auto: format, maxW: "180", maxH: "180"}) {
+      responsiveImage(imgixParams: {fit: crop, auto: format, w: "180", h: "180"}) {
         width
         webpSrcSet
         title

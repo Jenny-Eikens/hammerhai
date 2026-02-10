@@ -32,8 +32,12 @@ const Ticket = ({
           <h1 className="text-4xl font-bold">Hammerhai</h1>
           <div className="flex justify-between space-x-2">
             <span className="gig-details">{formattedDate}</span>
-            <span className="gig-details">{time} Uhr</span>
-            <span className="gig-details">Preis: {price}€</span>
+            <span className="gig-details">
+              {time === 'tba' || !time ? 'tba' : time + ' Uhr'}{' '}
+            </span>
+            <span className="gig-details">
+              Preis: {price === 'tba' || !price ? 'tba' : price + ' €'}
+            </span>
           </div>
         </div>
 
@@ -55,7 +59,7 @@ const Ticket = ({
             </div>
             {doors && (
               <span className="block text-sm font-semibold">
-                Einlass {doors} Uhr
+                Einlass {doors === 'tba' || !doors ? 'tba' : doors + 'Uhr'}
               </span>
             )}
           </div>

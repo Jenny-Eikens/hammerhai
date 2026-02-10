@@ -19,7 +19,7 @@ const Ticket = ({
   return (
     <>
       <div
-        className="gig-wrapper m-auto flex min-h-[9rem] max-w-[700px] origin-top scale-[58%] rounded-xs bg-white pr-1 sm:scale-90 md:scale-100"
+        className="gig-wrapper [9rem] m-auto flex w-[40rem] origin-top scale-[58%] rounded-xs bg-white pr-1 sm:scale-90 md:scale-100"
         aria-label="Live-Termin"
       >
         <DatoImage data={venueImage.responsiveImage} className="rounded-l-xs" />
@@ -57,11 +57,9 @@ const Ticket = ({
               <span className="text-xs">Ticket-Nr.</span>
               <span className="text-xs">0123456789</span>
             </div>
-            {doors && (
-              <span className="block text-sm font-semibold">
-                Einlass {doors === 'tba' || !doors ? 'tba' : doors + 'Uhr'}
-              </span>
-            )}
+            <span className="block text-sm font-semibold">
+              Einlass {doors === 'tba' || !doors ? 'tba' : doors + 'Uhr'}
+            </span>
           </div>
         </div>
       </div>

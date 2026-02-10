@@ -36,7 +36,7 @@ const Ticket = ({
               {time === 'tba' || !time ? 'Uhrzeit: tba' : time + ' Uhr'}{' '}
             </span>
             <span className="gig-details">
-              Preis: {price === 'tba' || !price ? 'tba' : price + ' €'}
+              Preis: {price === 'tba' || !price ? 'tba' : price + '€'}
             </span>
           </div>
         </div>

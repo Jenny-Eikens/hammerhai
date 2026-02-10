@@ -19,7 +19,7 @@ const Ticket = ({
   return (
     <>
       <div
-        className="gig-wrapper [9rem] m-auto flex w-[40rem] origin-top scale-[58%] rounded-xs bg-white pr-1 sm:scale-90 md:scale-100"
+        className="gig-wrapper m-auto flex min-h-[9rem] w-full max-w-[680px] origin-top scale-[58%] rounded-xs bg-white pr-1 sm:scale-90 md:scale-100"
         aria-label="Live-Termin"
       >
         <DatoImage data={venueImage.responsiveImage} className="rounded-l-xs" />

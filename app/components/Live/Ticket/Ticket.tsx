@@ -33,12 +33,12 @@ const Ticket = ({
           <div className="flex justify-between space-x-2">
             <span className="gig-details">{formattedDate}</span>
             <span className="gig-details">
-              {(time === 'tba' || time === 'TBA' || !time)
+              {(!time || time.toLowerCase() === "tba")
                 ? 'Uhrzeit: tba'
                 : time + ' Uhr'}{' '}
             </span>
             <span className="gig-details">
-              Preis: {(price === 'tba' || price === 'TBA' || !price) ? 'tba' : price + '€'}
+              Preis: {(!price || price.toLowerCase() === "tba") ? 'tba' : price + '€'}
             </span>
           </div>
         </div>
@@ -61,7 +61,7 @@ const Ticket = ({
             </div>
             <span className="block text-sm font-semibold">
               Einlass{' '}
-              {(doors === 'tba' || doors === 'TBA' || !doors) ? 'tba' : doors + 'Uhr'}
+              {(!doors || doors.toLowerCase() === "tba") ? 'tba' : doors + 'Uhr'}
             </span>
           </div>
         </div>

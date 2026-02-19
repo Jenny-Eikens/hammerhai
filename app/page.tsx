@@ -5,7 +5,7 @@ import Home from './components/Home'
 export const revalidate = 60
 
 const HOMEPAGE_QUERY = `query MyQuery {
-  allConcerts {
+  allConcerts(orderBy: date_ASC) {
     id
     address
     date

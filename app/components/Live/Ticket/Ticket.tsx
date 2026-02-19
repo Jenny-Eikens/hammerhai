@@ -61,7 +61,7 @@ const Ticket = ({
             </div>
             <span className="block text-sm font-semibold">
               Einlass{' '}
-              {doors === 'tba' || 'TBA' || !doors ? 'tba' : doors + 'Uhr'}
+              {(doors === 'tba' || 'TBA' || !doors) ? 'tba' : doors + 'Uhr'}
             </span>
           </div>
         </div>
